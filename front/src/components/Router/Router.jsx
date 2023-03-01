@@ -19,6 +19,10 @@ import BackToTopButton from "../BackToTopButton/BackToTopButton";
 import Registration from "../../pages/home/Registration";
 import Login from "../../pages/home/Login";
 import Profile from "../../pages/profile/Profile";
+import VideoGallery from '../../pages/video-gallery/VideoGallery';
+import VideoItemPage from '../../pages/video-item/VideoItemPage';
+import NewsGallery from '../../pages/news-gallery/NewsGallery';
+import NewsItemPage from '../../pages/news-item/NewsItemPage';
 
 
 function Router() {
@@ -39,7 +43,13 @@ function Router() {
 							<Profile />
 						</PrivateRoute>
 					}
-				/>
+/>
+                    
+					<Route exact path="/video" element={<VideoGallery />} />
+					<Route path="/video/:videoId" element={<VideoItemPage />} />
+					<Route exact path="/news" element={<NewsGallery />} />
+					<Route path="/news/:newsId" element={<NewsItemPage />} />
+				
                 </Routes>
             </div>
             <BackToTopButton/>

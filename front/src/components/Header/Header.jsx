@@ -66,11 +66,11 @@ const Header = ({authed}) => {
                                 <ul className="dropdown-menu">
                                     <li><NavLink to="/" className="dropdown-item">Центры</NavLink></li>
                                     <li><NavLink to="/" className="dropdown-item">Курсы</NavLink></li>
-                                    <li><NavLink to="/" className="dropdown-item">Учебные материалы</NavLink></li>
+                                    <li><NavLink to="/video" className="dropdown-item">Учебные материалы</NavLink></li>
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/" className="nav-link" aria-current="page">Новости</NavLink>
+                                <NavLink to="/news" className="nav-link" aria-current="page">Новости</NavLink>
                             </li>
                             {authed && (<li className="nav-item">
                                 <NavLink to="/profile" className="nav-link" aria-current="page">Личный кабинет</NavLink>
