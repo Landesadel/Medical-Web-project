@@ -14,11 +14,11 @@ import Footer from "../Footer/Footer";
 // import Login from "../Login/Login";
 // import Footer from "../Footer/Footer";
 // import BackToTopButton from "../BackToTopButton/BackToTopButton";
-import routes from '../../routes/route';
+import {routes , PrivateRoute } from '../../routes/route';
 import BackToTopButton from "../BackToTopButton/BackToTopButton";
 import Registration from "../../pages/home/Registration";
 import Login from "../../pages/home/Login";
-
+import Profile from "../../pages/profile/Profile";
 
 
 function Router() {
@@ -32,6 +32,14 @@ function Router() {
                     <Route path="signup" element={<Registration/>}/>
                     <Route path="login" element={<Login/>}/>
                     <Route path="*" element={<h2 className={styles.h2}>Страница не найдена</h2>}/>
+                    <Route
+					path="/profile"
+					element={
+						<PrivateRoute isAuth={authed}>
+							<Profile />
+						</PrivateRoute>
+					}
+				/>
                 </Routes>
             </div>
             <BackToTopButton/>

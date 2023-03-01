@@ -72,6 +72,9 @@ const Header = ({authed}) => {
                             <li className="nav-item">
                                 <NavLink to="/" className="nav-link" aria-current="page">Новости</NavLink>
                             </li>
+                            {authed && (<li className="nav-item">
+                                <NavLink to="/profile" className="nav-link" aria-current="page">Личный кабинет</NavLink>
+                            </li>)}
                             <li className="nav-item">
                                 <NavLink to="/login" className="nav-link" aria-current="page">Контакты</NavLink>
                             </li>
@@ -83,7 +86,7 @@ const Header = ({authed}) => {
                                 </button>
                             </li>
                         </ul>
-
+                        
 
                         <div className={`nav-item ms-2 mb-2 ${styles.headerAccountIcon}`}>
                             <NavLink to="/login" className="nav-link" aria-current="page"><img src={authed ? User : Exit}
