@@ -45,17 +45,17 @@ const Footer = () => {
                         <li>
                             <div className='footer__social-media-icons'>
                                 <Link to="https://www.instagram.com/" rel="nofollow noopener noreferrer" target="_blank"
-                                    class="everywhere-button">
+                                    className="everywhere-button">
                                     <img src={Instagram} alt="Instagram" />
                                 </Link>
 
                                 <Link to="https://www.facebook.com/" rel="nofollow noopener noreferrer" target="_blank"
-                                    class="everywhere-button">
+                                    className="everywhere-button">
                                     <img src={Facebook} alt="Facebook" />
                                 </Link>
 
                                 <Link to="https://www.youtube.com/" rel="nofollow noopener noreferrer" target="_blank"
-                                    class="everywhere-button">
+                                    className="everywhere-button">
                                     <img src={Youtube} alt="Youtube" />
                                 </Link>
                             </div>

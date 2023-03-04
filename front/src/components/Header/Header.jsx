@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import Bosom from "../../assets/images/logo_bosom_named.png";
 import styles from "./Header.module.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Search from "../../assets/images/search.png";
 
 const Header = ({ authed }) => {
@@ -72,9 +72,6 @@ const Header = ({ authed }) => {
                             <li className="nav-item">
                                 <Link to="/" className="menu_link" aria-current="page">Новости</Link>
                             </li>
-                            {authed && (<li className="nav-item">
-                                <NavLink to="/profile" className="nav-link" aria-current="page">Личный кабинет</NavLink>
-                            </li>)}
                             <li className="nav-item">
                                 <Link to="/login" className="menu_link" aria-current="page">Контакты</Link>
                             </li>
@@ -88,7 +85,6 @@ const Header = ({ authed }) => {
                                 </button>
                             </li>
                         </ul>
-                        
 
                         <div className={`nav-item ms-2 mb-2 ${styles.headerAccountIcon}`}>
                             <Link to="/login" className="nav-link" aria-current="page">
