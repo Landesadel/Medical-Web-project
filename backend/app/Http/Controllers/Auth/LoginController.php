@@ -43,7 +43,6 @@ class LoginController
      */
     public function login(Request $request) 
     {
-        dd($request);
         $validator = Validator::make($request->all(), $this->validationInput());
 
         if ($validator->fails()){
@@ -55,15 +54,17 @@ class LoginController
 
         $auth = $request->only('email', 'password');
 
-        if (Auth::attempt($auth)) {
-            $request->session()->regenerate();
 
-            return redirect()->intended('dashboard');
+        if (Auth::attempt($auth)) {
+            
+            return response()->json([
+                'success' => true,
+            ]);    
         }    
 
         return response()->json([
             'success' => false,
-
+            'message' => "wrong password or login"
         ]);      
     }
 

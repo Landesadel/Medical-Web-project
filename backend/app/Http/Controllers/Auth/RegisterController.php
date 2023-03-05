@@ -17,6 +17,7 @@ class RegisterController
      */
     protected function create(array $data)
     {
+
         return User::create([
             'last_name' => $data['last_name'],
             'first_name'=> $data['first_name'],
@@ -38,16 +39,15 @@ class RegisterController
     }
 
     /**
-     * @param  Request $request
+     * @param  CreateRequest $request
      * @return JsonResponse
      */
-    public function register(CreateRequest $request,)
+    public function register(CreateRequest $request)
     {
-        
+      
         $validate = $request->validated();
 
         $user = $this->create($validate);
-
 
         if($user) {
             return response()->json([

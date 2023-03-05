@@ -28,7 +28,7 @@ class CreateRequest extends FormRequest
                 'birth_date' => 'date',
                 'avatar' => 'image|nullable',
                 'email' => 'required|email|unique:users,email',
-                'phone' => 'numeric|regex:^(\+375|80)(24|29|25|44|33)(\d{3})(\d{2})(\d{2})$',
+                'phone' => ['regex:/^(\+375|80)(24|29|25|44|33)(\d{3})(\d{2})(\d{2})$/'],
                 'address' => 'string',
                 'education' => 'string|nullable',
                 'place_work' => 'string|nullable',
