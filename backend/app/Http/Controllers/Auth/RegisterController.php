@@ -2,61 +2,25 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Hash;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Http\Requests\Users\CreateRequest;
 
-class RegisterController
+class RegisterController extends Controller
 {
     /**
-     * @param  array $data
-     * @return User $user
+     * Handle the incoming request.
      */
-    protected function create(array $data)
+    public function __invoke(CreateRequest $request)
     {
+        $request['password'] = Hash::make($request->password);
 
-        return User::create([
-            'last_name' => $data['last_name'],
-            'first_name'=> $data['first_name'],
-            'surname' => $data['surname'],
-            'birth_date' => $data['birth_date'],
-            'avatar' => $data['avatar'],
-            'email'=> $data['email'],
-            'phone' => $data['phone'],
-            'address' => $data['address'],
-            'education'=> $data['education'],
-            'place_work' => $data['place_work'],
-            'position'=> $data['position'],
-            'category'=> $data['category'],
-            'experience'=> $data['experience'],
-            'other_info'=> $data['other_info'],
-            'sign_for_news'=> $data['sign_for_news'],
-            'password' => Hash::make($data['password']),
-        ]);
-    }
-
-    /**
-     * @param  CreateRequest $request
-     * @return JsonResponse
-     */
-    public function register(CreateRequest $request)
-    {
-      
-        $validate = $request->validated();
-
-        $user = $this->create($validate);
-
-        if($user) {
-            return response()->json([
-                'success' => true,
-            ]);
-        }
+        User::create($request->validated());
 
         return response()->json([
-            'success' => false,
+            'success' => true,
         ]);
     }
 }

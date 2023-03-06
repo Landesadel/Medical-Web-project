@@ -27,7 +27,7 @@ Route::group(['prefix' => 'user','middleware' => 'auth'], function() {
 });
 
 
-Route::post('/register', [RegisterController::class, 'register'])
+Route::post('/register', RegisterController::class)
         ->name('register');
 Route::post('/login', [LoginController::class, 'login'])
         ->name('login');    
