@@ -43,6 +43,7 @@ class LoginController
      */
     public function login(Request $request) 
     {
+        
         $validator = Validator::make($request->all(), $this->validationInput());
 
         if ($validator->fails()){

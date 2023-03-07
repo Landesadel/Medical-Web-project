@@ -17,10 +17,27 @@ class RegisterController extends Controller
     {
         $request['password'] = Hash::make($request->password);
 
-        User::create($request->validated());
+    /**
+     * @param  Request $request
+     * @return JsonResponse
+     */
+    public function register(CreateRequest $request,)
+    {
+        dd($request);
+        $validate = $request->validated();
+
+        $user = $this->create($validate);
+
+
+        if($user) {
+            return response()->json([
+                'accessToken' => true,
+                'user'=>$user
+            ]);
+        }
 
         return response()->json([
-            'success' => true,
+            'error' => false,
         ]);
     }
 }
