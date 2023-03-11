@@ -2,71 +2,35 @@
 
 namespace App\Http\Controllers\Auth;
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Validator;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\Users\LoginRequest;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Auth;
 
-class LoginController
+class LoginController extends Controller
 {
     /**
-     * @return array
-     */
-    protected function validationInput()
-    {
-        return [
-            'email' => 'required|email',
-            'password' => 'required'
-        ];
-    }
-
-    /**
-     * @param  Request $request
-     * @return RedirectResponse
-     */
-    public function logout(Request $request)
-    {
-        
-        Auth::logout();
-
-        $request->session()->invalidate();
- 
-        $request->session()->regenerateToken();
-
-        return redirect()->route('login');
-    }
-
-    /**
-     * @param  Request $request
+     * @param LoginRequest $request
      * @return JsonResponse
      */
-    public function login(Request $request) 
+    public function __invoke(LoginRequest $request): JsonResponse
     {
-        
-        $validator = Validator::make($request->all(), $this->validationInput());
+        $validate = $request->validated();
 
-        if ($validator->fails()){
-            return response()->json([
-                'success' => false,
-                'errors' => $validator->errors()->toArray()
-            ]);
-       }
+       if(Auth::attempt($validate)) {
 
-        $auth = $request->only('email', 'password');
+        $token = $request->user()->createToken('token_api')->plainTextToken;
 
-
-        if (Auth::attempt($auth)) {
-            
-            return response()->json([
-                'success' => true,
-            ]);    
-        }    
+        return response()->json([
+            'user' => Auth::user(),
+            'token' => $token
+        ], 201);    
+    }
 
         return response()->json([
             'success' => false,
             'message' => "wrong password or login"
-        ]);      
+        ]);
+        
     }
-
 }

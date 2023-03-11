@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 
 use App\Http\Controllers\Content\VideosController;
 use App\Http\Controllers\Content\ArticlesController;
@@ -25,14 +26,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::group(['prefix' => 'user','middleware' => 'auth'], function() {
-    Route::get('logout', [LoginController::class, 'logout'])
+    Route::get('logout', LogoutController::class)
         ->name('account.logout');
 });
 
 Route::group(['prefix' => 'auth', 'as' => '',], static function () {
-Route::post('register', [RegisterController::class, 'register'])
+Route::post('register', RegisterController::class)
         ->name('account_register');
-Route::post('login', [LoginController::class, 'login'])
+Route::post('login', LoginController::class)
         ->name('login');    
     });
 
@@ -40,4 +41,3 @@ Route::post('login', [LoginController::class, 'login'])
             Route::get('videos', [VideosController::class, 'index']);
             Route::get('articles', [ArticlesController::class, 'index']);
         });
-        

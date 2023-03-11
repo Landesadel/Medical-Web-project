@@ -38,7 +38,7 @@ class CreateRequest extends FormRequest
                 'other_info' => 'string|nullable',
                 'sign_for_news' => 'boolean',
                 'has_agree' => 'accepted',
-                'password' => 'required|current_password:api',
+                'password' => 'required',
             ];
     }
 }
