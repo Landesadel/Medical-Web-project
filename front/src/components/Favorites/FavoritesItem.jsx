@@ -7,7 +7,7 @@ const FavoritesItem = ({ statement }) => {
 			<img src={statement.image} alt={statement.title} />
 			<h4>{statement.title}</h4>
 			<p>{statement.description}</p>
-			<a href={statement.link}>{'Продолжить'}</a>
+			<a href={statement.link}>{'Подробнее...'}</a>
 		</div>
 	);
 };

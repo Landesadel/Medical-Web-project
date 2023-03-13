@@ -1,19 +1,21 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import styles from './Router.module.css';
+import styles from './Router.module.scss';
 import Header from '../Header/Header';
 import Home from '../../pages/home/Home';
 import Footer from '../Footer/Footer';
 import { routes, PrivateRoute } from '../../routes/route';
 import BackToTopButton from '../BackToTopButton/BackToTopButton';
-import Registration from '../../pages/home/Registration';
-import Login from '../../pages/home/Login';
 import Profile from '../../pages/profile/Profile';
 import VideoGallery from '../../pages/video-gallery/VideoGallery';
 import VideoItemPage from '../../pages/video-item/VideoItemPage';
 import NewsItemPage from '../../pages/news-item/NewsItemPage';
 import NewsGallery from '../../pages/news-gallery/NewsGallery';
+import Registration from "../../pages/registration/Registration";
+import Login from "../../pages/login/Login";
+
+
 
 const isAuth = true;
 

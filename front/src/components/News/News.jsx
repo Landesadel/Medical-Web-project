@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "./News.module.css";
+import styles from "./News.module.scss";
 import NewsInMedicine from "../../assets/testImages/newInMedicine.jpg";
 import Relations from "../../assets/testImages/relations.jpg";
 import Digital from "../../assets/testImages/digital.jpg";

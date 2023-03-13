@@ -1,11 +1,32 @@
 @import '../../assets/styles/variables';
+
+$max-tablet-width: '991px';
+$max-mobile-width: '768px';
+$max-sm-mobile-width: '575px';
+
+@mixin tablet {
+	@media(max-width: $max-tablet-width) {
+		@content;
+	}
+}
+
+@mixin mobile {
+	@media(max-width: $max-mobile-width) {
+		@content;
+	}
+}
+
+
 .sidebar {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	max-width: 700px;
 	padding: 20px;
 	margin-top: 20px;
+	position: relative;
 	> h3 {
+		//width: 250px;
 		margin-bottom: 20px;
 		font-family: 'Rubik';
 		font-style: normal;
@@ -13,21 +34,36 @@
 		font-size: 20px;
 		line-height: 140%;
 		color: $primary-text-color;
+		position: sticky;
+		top: 10px;
+		left: 20px;
 	}
 }
 .list {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: repeat(5,1fr);
 	gap: 20px;
+	//overflow-x: auto;
+	margin-right: 0;
+	padding-right: 0;
+
 }
 .item {
 	margin-bottom: 20px;
+	width: 400px;
+	//margin-right: 20px;
+	@include tablet(){
+		width: 100vw;
+		max-width: 100%;
+	}
+
 	> img {
 		border-radius: 10px;
-		width: 100%;
+		object-fit: contain;
 	}
 	> h4 {
 		margin-bottom: 20px;
+		max-width: 70%;
 		font-family: 'Rubik';
 		font-style: normal;
 		font-weight: 700;
@@ -35,16 +71,20 @@
 		line-height: 140%;
 		color: $primary-text-color;
 		opacity: 0.85;
+
 	}
 	> p {
 		margin-bottom: 20px;
+		max-width: 70%;
 		font-family: 'Rubik';
 		font-style: normal;
 		font-weight: 700;
 		font-size: 16px;
-		line-height: 140%;
+		line-height: 130%;
 		color: $primary-text-color;
 		opacity: 0.7;
+		max-height: 200px;
+		overflow-y: hidden;
 	}
 	> a {
 		text-decoration: none;

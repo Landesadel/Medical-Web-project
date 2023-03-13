@@ -3,7 +3,7 @@ import InputForm from '../../ui/input-form/InputForm';
 import styles from './UserProfile.module.scss';
 const ProfileFields = ({ isDisabled, formState, register, user }) => {
 	return (
-		<>
+		<div className={styles.profile}>
 			<div className={styles.name}>
 				<InputForm
 					className={styles.input}
@@ -106,7 +106,7 @@ const ProfileFields = ({ isDisabled, formState, register, user }) => {
 					{...register('education', { required: true })}
 				/>
 			</div>
-			<div className={styles.textarea}>
+			<div className={`${styles.textarea} ${styles.address}`}>
 				<InputForm
 					id={'other_info'}
 					className={styles.input}
@@ -116,7 +116,7 @@ const ProfileFields = ({ isDisabled, formState, register, user }) => {
 					{...register('other_info', { required: true })}
 				/>
 			</div>
-		</>
+		</div>
 	);
 };
 

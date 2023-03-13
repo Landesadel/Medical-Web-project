@@ -1,5 +1,5 @@
 import React, {useRef} from "react";
-import styles from "./BackToTopButton.module.css";
+import styles from "./BackToTopButton.module.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUp} from '@fortawesome/free-solid-svg-icons'
 

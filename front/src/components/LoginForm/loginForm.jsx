@@ -46,6 +46,7 @@ function LoginForm({ saveData }) {
             <input className="login_btn" type="submit" value="Войти"/>
         </div>
     </form>
+
 }
 
 export default LoginForm;

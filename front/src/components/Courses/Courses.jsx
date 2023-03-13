@@ -1,39 +1,26 @@
 import React from 'react';
-import styles from "./Courses.module.css";
+import styles from "./Courses.module.scss";
 import Stetoscope from "../../assets/testImages/stetoscop.jpg";
 import Ancient from "../../assets/testImages/ancient.jpg";
 import Medicine from "../../assets/testImages/mediczina.jpg";
 import MyCarousel from '../MyCarousel/MyCarousel';
-const style={
-    captionStyle:{
-        fontSize:'38px'
-    },
-    linkStyle:{
-        color:'#fff',
-        fontSize: '24px'
-    }
-};
+
+
 const data = [
     {
         image: Stetoscope,
         caption: "Хирургия",
-        description: "Подробнее...",
-        captionStyle:style.captionStyle,
-        linkStyle: style.linkStyle
+        description: "Подробнее..."
     },
     {
         image: Ancient,
         caption: "Анестезиология и реанимация",
-        description: "Подробнее...",
-        captionStyle:style.captionStyle,
-        linkStyle: style.linkStyle
+        description: "Подробнее..."
     },
     {
         image: Medicine,
         caption: "Функциональная диагностика",
-        description: "Подробнее...",
-        captionStyle:style.captionStyle,
-        linkStyle: style.linkStyle
+        description: "Подробнее..."
     }
 ];
 
@@ -49,7 +36,12 @@ const Courses = () => {
                 </div>
                 <div className="row">
                     <div className="col">
-                        <MyCarousel data={data} height='600px'/>
+                        <MyCarousel
+                            data={data}
+                            height={styles.carouselHeight}
+                            captionStyle={styles.captionStyle}
+                            linkStyle={styles.linkStyle}
+                        />
                     </div>
                 </div>
             </div>

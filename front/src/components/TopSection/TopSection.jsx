@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./TopSection.module.css";
+import styles from "./TopSection.module.scss";
 import topFoto from "../../assets/testImages/Top.png";
 import { Parallax } from 'react-parallax';
 
@@ -7,7 +7,7 @@ const TopSection = () => {
     return (
         <div className={styles.topSection} id="topSection">
             <div className="container">
-                <div className="row d-flex align-items-center">
+                <div className="row d-flex align-items-center justify-content-between">
                     <div className="col-sm">
                         <div className={`${styles.topWrapper}`}>
                             <h1 className={`${styles.topHeading}`}>Белорусское общество симуляционного обучения в
