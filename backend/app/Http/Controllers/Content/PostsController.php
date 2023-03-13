@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Posts as PostsModel;
 use App\Models\User as UserModel;
+use Illuminate\Support\Facades\Validator;
 
 class PostsController extends Controller
 {
@@ -16,10 +17,12 @@ class PostsController extends Controller
     public function index(): string
     {
         $posts = new PostsModel();
+        
         $result = [];
         foreach ($posts->get() as $item) {
             $result[$item->id] = [
                 'id' => $item->id,
+                'author_id' =>$item->author_id,
                 'title' => $item->title,
                 'created_at' => $item->created_at->toDateTimeString(),
                 'last_comment' => $item->comments->map(fn($com) => $com->updated_at->toDateTimeString())->first(),
@@ -39,10 +42,29 @@ class PostsController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     * @param  Request $request
+     * @return string
      */
-    public function store(Request $request)
+    public function store(Request $request): string
     {
-        //
+        $validator = Validator::make($request->all(), [
+                'author_id' => ['required', 'integer'],
+                'title' => ['required', 'string', 'min: 3', 'max: 50'],
+                'description' => ['nullable', 'string']
+            ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'errors' => $validator->errors(),
+            ]);
+        }
+        
+        $post = PostsModel::create($validator->validated());
+        if ($post) {
+            return response()->json([
+                'success' => true,
+            ]);
+        } 
     }
 
     /**
@@ -64,6 +86,7 @@ class PostsController extends Controller
         foreach ($comments as $comment) {
             $comment_user = $users->find($comment->author_id);
             $commentsCollection[$comment->id] = [
+                'id' => $comment->id,
                 'author' => $comment_user->first_name. ' ' .$comment_user->last_name,
                 'author_id' => $comment_user->id,
                 'avatar' => $comment_user->avatar,
@@ -107,10 +130,16 @@ class PostsController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     * @param  int  $id
+     * @return string
      */
-    public function destroy(string $id)
+    public function destroy(int $id): string
     {
-        //
+        $posts = new PostsModel();
+        if ($posts->where('id', '=', $id)->delete()) {
+            return 'deleted';
+        } 
+        return 'false';
     }
 
 }
