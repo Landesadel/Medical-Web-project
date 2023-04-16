@@ -4,7 +4,7 @@
         <h1 class="h2">Полная информация по заявке пользователя</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group mr-2">
-                <a href="{{ route('admin.all_applications') }}" class="btn btn-sm btn-outline-secondary">Назад</a>
+                <a href="{{ url(App\Classes\Helpers::getHost(true) . '/admin/all_applications/') }}" class="btn btn-sm btn-outline-secondary">Назад</a>
                 <button class="btn btn-sm btn-outline-secondary">#</button>
             </div>
         </div>

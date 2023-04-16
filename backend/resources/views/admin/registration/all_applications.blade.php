@@ -29,9 +29,9 @@
                 <td>{{ $application->position }}</td>
                 <td>{{ $application->created_at }}</td>
                 <td>
-                    <a class="btn btn-sm btn-outline-secondary" href="{{ route('admin.application', [$application->id]) }}">Посмотреть полную информацию</a>
-                    <a class="btn btn-sm btn-outline-secondary" href="{{ route('admin.accept_the_application', $application->id) }}">Принять заявку на регистрацию</a>
-                    <a class="btn btn-sm btn-outline-secondary" href="{{ route('admin.reject_the_application', $application->id) }}">Отклонить заявку на регистрацию</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="{{ url(App\Classes\Helpers::getHost(true) . '/admin/show_application/' . $application->id) }}">Посмотреть полную информацию</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="{{ url(App\Classes\Helpers::getHost(true) . '/admin/accept_the_application/' . $application->id) }}">Принять заявку на регистрацию</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="{{ url(App\Classes\Helpers::getHost(true) . '/admin/reject_the_application/' . $application->id) }}">Отклонить заявку на регистрацию</a>
                 </td>
             </tr>
         @empty
