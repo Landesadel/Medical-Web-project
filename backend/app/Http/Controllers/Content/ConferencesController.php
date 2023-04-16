@@ -12,8 +12,8 @@ class ConferencesController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * @param  ConferencesQueryBuilder $conferencesQueryBuilder
-     * @return string
+     * @param ConferencesQueryBuilder $conferencesQueryBuilder
+     * @return JsonResponse
      */
     public function index(ConferencesQueryBuilder $conferencesQueryBuilder): JsonResponse
     {
@@ -28,9 +28,9 @@ class ConferencesController extends Controller
 
     /**
      * Display the specified resource.
-     * @param  ConferencesQueryBuilder $conferencesQueryBuilder
-     * @param  int                     $id
-     * @return string
+     * @param ConferencesQueryBuilder $conferencesQueryBuilder
+     * @param int $id
+     * @return JsonResponse
      */
     public function show(ConferencesQueryBuilder $conferencesQueryBuilder, int $id): JsonResponse
     {
@@ -46,10 +46,10 @@ class ConferencesController extends Controller
 
     /**
      * Display the specified resource.
-     * @param  CreateRequest                  $request
-     * @param  RegistrationOrdersQueryBuilder $ordersQueryBuilder
-     * @param  ConferencesQueryBuilder        $conferencesQueryBuilder
-     * @return string
+     * @param CreateRequest                  $request
+     * @param RegistrationOrdersQueryBuilder $ordersQueryBuilder
+     * @param ConferencesQueryBuilder        $conferencesQueryBuilder
+     * @return JsonResponse
      */
     public function registration (
         CreateRequest $request,
@@ -92,10 +92,10 @@ class ConferencesController extends Controller
 
     /**
      * Display the specified resource.
-     * @param  CreateRequest                  $request
-     * @param  RegistrationOrdersQueryBuilder $ordersQueryBuilder
-     * @param  ConferencesQueryBuilder        $conferencesQueryBuilder
-     * @return string
+     * @param CreateRequest                  $request
+     * @param RegistrationOrdersQueryBuilder $ordersQueryBuilder
+     * @param ConferencesQueryBuilder        $conferencesQueryBuilder
+     * @return JsonResponse
      */
     public function unregister(
         CreateRequest $request,

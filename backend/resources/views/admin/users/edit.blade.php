@@ -15,7 +15,7 @@
                 <x-alert type="danger" :message="$error"></x-alert>
             @endforeach
         @endif
-        <form method="post" action="{{  url(App\Classes\Helpers::getHost(true) . "/admin/users/". $user->id) }}">
+        <form method="post" action="{{  url(App\Classes\Helpers::getHost(true) . "/admin/users/" . $user->id) }}">
             @csrf
             @method('put')
             <div class="form-group">
@@ -75,7 +75,7 @@
                 <label for="sign_for_news">Подписка на новости</label>
                 <input type="radio" id="sign_for_news" name="sign_for_news" value="true" @if ($user->sign_for_news === true) checked @endif>
             </div>
-            <button type="submit" class="btn btn-sm btn-outline-secondary">Добавить+</button>
+            <button type="submit" class="btn btn-sm btn-outline-secondary">Сохранить+</button>
         </form>
     </div>
 @endsection

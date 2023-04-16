@@ -13,13 +13,9 @@ class CommunityCenterController extends Controller
 {
     /**
      * @param CommunityCenterQueryBuilder $communityCenterQueryBuilder
-     * @param CategoriesQueryBuilder $categoriesQueryBuilder
-     * @return string
+     * @return JsonResponse
      */
-    public function index(
-        CommunityCenterQueryBuilder $communityCenterQueryBuilder,
-        CategoriesQueryBuilder $categoriesQueryBuilder
-    ): JsonResponse
+    public function index(CommunityCenterQueryBuilder $communityCenterQueryBuilder): JsonResponse
     {
         $community_center_collection = $communityCenterQueryBuilder->getCollection();
 
@@ -32,9 +28,9 @@ class CommunityCenterController extends Controller
     }
 
     /**
-     * @param CategoriesQueryBuilder $categoriesQueryBuilder
+     * @param CategoriesQueryBuilder      $categoriesQueryBuilder
      * @param CommunityCenterQueryBuilder $communityCenterQueryBuilder
-     * @return string
+     * @return JsonResponse
      */
     public function getCategories(
         CategoriesQueryBuilder $categoriesQueryBuilder,
@@ -57,8 +53,8 @@ class CommunityCenterController extends Controller
     }
 
     /**
-     * @param int $id
-     * @param CommunityCenterQueryBuilder $communityCenterQueryBuilder
+     * @param int                               $id
+     * @param CommunityCenterQueryBuilder       $communityCenterQueryBuilder
      * @param CommunityCenterPhotosQueryBuilder $communityCenterPhotosQueryBuilder
      * @return string
      */

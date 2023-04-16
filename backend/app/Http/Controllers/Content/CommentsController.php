@@ -4,8 +4,6 @@ namespace App\Http\Controllers\Content;
 
 use App\Http\Controllers\Controller;
 use App\QueryBuilders\CommentQueryBuilder;
-use App\QueryBuilders\PostQueryBuilder;
-use App\QueryBuilders\UserQueryBuilder;
 use Illuminate\Http\JsonResponse;
 use App\Models\Comments;
 use App\Http\Requests\Comments\CreateRequest;

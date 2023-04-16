@@ -22,8 +22,8 @@ class CreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'event_id' => ['exists:conferences,id', 'integer'],
-            'account_id' => ['exists:accounts,id', 'integer'],
+            'event_id' => ['integer'],
+            'account_id' => ['integer'],
         ];
     }
 }
