@@ -28,10 +28,13 @@ import Normatives from "../../pages/normatives/Normatives";
 import NormativeItem from "../../pages/normative-item/NormativeItem";
 import CentersGallery from "../../pages/centers-gallery/CentersGallery";
 import CenterItemPage from "../../pages/center-item-page/CenterItemPage";
-import Contacts from "../../pages/contacts/Contacts";
+
+import Contacts from '../../pages/contacts/Contacts';
+import Payments from '../../pages/payments/Payments';
 import Structure from "../../pages/structure/Structure";
 import Partners from "../../pages/Partners/Partners";
 import History from '../../pages/history/History';
+
 
 
 const isAuth = true;
@@ -78,8 +81,12 @@ function Router() {
 					<Route path="/normatives/:id" element={<NormativeItem />} />
 					<Route path="/centers" element={<CentersGallery/>} />
 					<Route path="/centers/:centerId" element={<CenterItemPage/>} />
+
+					<Route path="/payments" element={<Payments />} />
+
 					<Route path={routes.STRUCTURE.link} element={<Structure/>} />
 					<Route path={routes.PARTNERS.link} element={<Partners/>} />
+
 
 					<Route
 						path={routes.FORUM.link}
