@@ -5,6 +5,19 @@ import styles from './Normatives.module.scss';
 import Loader from "../../components/Loader/Loader";
 import {useNavigate} from "react-router-dom";
 
+export const normatives=[
+     {
+        id: 1,
+        url: 'bosom_registration_2.jpg',
+        title:'Свидетельство о государственной регистрации'
+
+    },
+     {
+        id: 2,
+        url: 'statute2022.pdf',
+        title:'Устав'
+    }
+];
 
 const Normatives = () => {
     const [docs, setDocs] = useState([]);
@@ -13,7 +26,8 @@ const Normatives = () => {
 
     useEffect(() => {
         try {
-            NormativesService.getAll().then((res) => setDocs(res));
+            // NormativesService.getAll().then((res) => setDocs(res));
+            setDocs(normatives);
         } catch (error) {
             setError(error.message);
         }
