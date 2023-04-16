@@ -77,7 +77,7 @@ class User extends Authenticatable
         foreach($data as $key => $value){
             if ($key == 'email') {
                 $account[$key] = $value;
-            }elseif ($key != 'created_at' && $key != 'updated_at') {
+            }elseif ($key != 'created_at' && $key != 'updated_at' && $key != 'id') {
                 $user[$key] = $value;
             }
         }
