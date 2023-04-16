@@ -14,6 +14,7 @@ import {
 } from './user.actions';
 
 const initialState = {
+	isRegisteredSuccess: null,
 	error: null,
 	isLoading: false,
 	user: getStoreLocalStorage('user'),
@@ -30,14 +31,16 @@ export const userSlice = createSlice({
 			.addCase(register.pending, (state) => {
 				state.isLoading = true;
 				state.error = null;
+				state.isRegisteredSuccess = null;
 			})
 			.addCase(register.fulfilled, (state, { payload }) => {
 				state.isLoading = false;
-				state.user = payload.user;
+				state.isRegisteredSuccess = true;
 				state.error = null;
 			})
 			.addCase(register.rejected, (state, { payload }) => {
 				state.isLoading = false;
+				state.isRegisteredSuccess = false;
 				state.error = { ...payload };
 			})
 			.addCase(login.pending, (state) => {

@@ -31,7 +31,7 @@ export const AuthService = {
 		degree,
 		academic_rank,
 		interests,
-		is_other_organization,
+		other_organization,
 		is_member,
 		has_agreed
 	) {
@@ -61,7 +61,7 @@ export const AuthService = {
 			degree,
 			academic_rank,
 			interests: interestsList,
-			is_other_organization,
+			other_organization,
 			is_member,
 			has_agreed,
 		});

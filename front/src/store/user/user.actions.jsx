@@ -30,7 +30,7 @@ export const register = createAsyncThunk(
 			degree,
 			academic_rank,
 			interests,
-			is_other_organization,
+			other_organization,
 			is_member,
 			has_agreed,
 		},
@@ -59,7 +59,7 @@ export const register = createAsyncThunk(
 				degree,
 				academic_rank,
 				interests,
-				is_other_organization,
+				other_organization,
 				is_member,
 				has_agreed
 			);

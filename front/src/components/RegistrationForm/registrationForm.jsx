@@ -89,7 +89,10 @@ function RegistrationForm() {
 	const { register: registerAction } = useActions();
 	const [responseError, setResponseError] = useState(null);
 	const [checked, setChecked] = useState(false);
-	const { user, error } = useAuth();
+	const { user, isRegisteredSuccess, error } = useAuth();
+
+	isRegisteredSuccess && !error && navigate('/');
+
 	const onSubmit = async (data) => {
 		await getCsrfToken();
 
@@ -115,7 +118,7 @@ function RegistrationForm() {
 			degree,
 			academic_rank,
 			interests,
-			is_other_organization,
+			other_organization,
 			is_member,
 			has_agreed,
 		} = data;
@@ -142,7 +145,7 @@ function RegistrationForm() {
 			degree,
 			academic_rank,
 			interests,
-			is_other_organization,
+			other_organization,
 			is_member,
 			has_agreed,
 		});
@@ -187,7 +190,9 @@ function RegistrationForm() {
 					placeholder="Петрович"
 					labelText="Отчество"
 					error={formState.errors.surname}
-					{...register('surname')}
+					{...register('surname', {
+						required: { value: true, message: 'Укажите отчество' },
+					})}
 				/>
 				<InputField
 					className="reg_field_width"
@@ -415,33 +420,19 @@ function RegistrationForm() {
 				{checked && (
 					<InputField
 						className="reg_field_width"
-						id="is_other_organization"
-						name="is_other_organization"
-						aria-label="is_other_organization"
+						id="other_organization"
+						name="other_organization"
+						aria-label="iother_organization"
 						labelText="Название обшественного объединения"
 						defaultValue=""
-						error={formState.errors['is_other_organization']}
+						error={formState.errors['other_organization']}
 						placeholder="..."
 						custom_required={true}
-						{...register('is_other_organization', {
+						{...register('other_organization', {
 							required: { value: true, message: 'Необходимо заполнить поле' },
 						})}
 					/>
 				)}
-
-				<label>
-					<span className="reg_checkbox_text">
-						Являетесь ли членом других общественных объединений
-					</span>
-					<input
-						id="is_member"
-						name="is_member"
-						type="checkbox"
-						aria-label="is_member"
-						onClick={() => setChecked((prev) => !checked)}
-						{...register('is_member')}
-					/>
-				</label>
 
 				<label>
 					<span className="reg_checkbox_text">
