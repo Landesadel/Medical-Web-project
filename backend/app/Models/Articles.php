@@ -8,9 +8,19 @@ use Laravel\Scout\Searchable;
 
 class Articles extends Model
 {
-    use HasFactory, Searchable;
+    use HasFactory;
+//    use Searchable;
 
     protected $table = 'articles';
+
+    protected $fillable = [
+        'author',
+        'title',
+        'description',
+        'image_url',
+        'short_text',
+        'text_html',
+    ];
 
     /**
      * Отдаём все статьи

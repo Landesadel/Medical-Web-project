@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\News;
+namespace App\Http\Requests\Account;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -22,12 +22,8 @@ class CreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'string', 'min: 3', 'max: 90'],
-            'short_description' => ['required', 'string', 'min: 3', 'max: 100'],
-            'description' => ['required', 'string'],
-            'image_url' => ['url'],
-            'started_at' => ['nullable'],
-            'ending_at' => ['nullable'],
+            'email' => 'required|email|unique:accounts',
+            'password' => 'required|min:8|max:20'
         ];
     }
 }

@@ -52,7 +52,7 @@
                 <td>{{ $user->created_at }}</td>
                 <td>{{ $user->updated_at }}</td>
                 <td>
-                    <a class="btn btn-sm btn-outline-secondary" href="{{ url(App\Classes\Helpers::getHost(true) . "/admin/users/" . $user->id . "/edit")}}">измениить</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="{{ url(App\Classes\Helpers::getHost(true) . "/admin/users/" . $user->id . "/edit")}}">изменить</a>
                     <a href="javascript:;" class="delete btn btn-sm btn-outline-secondary" rel="{{ $user->id }}">удалить</a>
                 </td>
             </tr>

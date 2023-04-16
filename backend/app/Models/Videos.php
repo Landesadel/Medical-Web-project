@@ -8,9 +8,19 @@ use Laravel\Scout\Searchable;
 
 class Videos extends Model
 {
-    use HasFactory, Searchable;
+    use HasFactory;
+//    use Searchable;
 
     protected $table = 'videos';
+
+    protected $fillable = [
+        'video_youtube_id',
+        'author',
+        'title',
+        'description',
+        'image_url',
+        'text_html',
+    ];
 
     /**
      * Отдаём все видео

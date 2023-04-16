@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\EventsOrders;
+namespace App\Http\Requests\Video;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateRequest extends FormRequest
+class EditRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,12 @@ class CreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'event_id' => ['integer'],
-            'account_id' => ['integer'],
+            'video_youtube_id' => 'required',
+            'author' => 'required|string',
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'image_url' => 'sometimes|url',
+            'text_html' => 'sometimes|string'
         ];
     }
 }

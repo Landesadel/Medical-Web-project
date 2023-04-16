@@ -85,7 +85,7 @@ class AccessGroupController extends Controller
         try{
             $accessGroup->delete();
 
-            return redirect()->with('success', 'Access group updated');
+            return redirect()->with('success', 'Access group was delete');
         } catch (Exception $exception) {
             Log::error($exception->getMessage(), [$exception]);
 

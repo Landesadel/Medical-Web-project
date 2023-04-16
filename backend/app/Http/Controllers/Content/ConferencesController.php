@@ -6,15 +6,16 @@ use App\Http\Controllers\Controller;
 use App\QueryBuilders\ConferencesQueryBuilder;
 use App\Http\Requests\EventsOrders\CreateRequest;
 use App\QueryBuilders\RegistrationOrdersQueryBuilder;
+use Illuminate\Http\JsonResponse;
 
 class ConferencesController extends Controller
 {
     /**
      * Display a listing of the resource.
-     * @param  ConferencesQueryBuilder $conferencesQueryBuilder
-     * @return string
+     * @param ConferencesQueryBuilder $conferencesQueryBuilder
+     * @return JsonResponse
      */
-    public function index(ConferencesQueryBuilder $conferencesQueryBuilder): string
+    public function index(ConferencesQueryBuilder $conferencesQueryBuilder): JsonResponse
     {
         $conferences = $conferencesQueryBuilder->get();
         if (!empty($conferences)) {
@@ -27,11 +28,11 @@ class ConferencesController extends Controller
 
     /**
      * Display the specified resource.
-     * @param  ConferencesQueryBuilder $conferencesQueryBuilder
-     * @param  int                     $id
-     * @return string
+     * @param ConferencesQueryBuilder $conferencesQueryBuilder
+     * @param int $id
+     * @return JsonResponse
      */
-    public function show(ConferencesQueryBuilder $conferencesQueryBuilder, int $id): string
+    public function show(ConferencesQueryBuilder $conferencesQueryBuilder, int $id): JsonResponse
     {
         $event = $conferencesQueryBuilder->getById($id);
 
@@ -45,16 +46,16 @@ class ConferencesController extends Controller
 
     /**
      * Display the specified resource.
-     * @param  CreateRequest                  $request
-     * @param  RegistrationOrdersQueryBuilder $ordersQueryBuilder
-     * @param  ConferencesQueryBuilder        $conferencesQueryBuilder
-     * @return string
+     * @param CreateRequest                  $request
+     * @param RegistrationOrdersQueryBuilder $ordersQueryBuilder
+     * @param ConferencesQueryBuilder        $conferencesQueryBuilder
+     * @return JsonResponse
      */
     public function registration (
         CreateRequest $request,
         RegistrationOrdersQueryBuilder $ordersQueryBuilder,
         ConferencesQueryBuilder $conferencesQueryBuilder
-    ): string
+    ): JsonResponse
     {
         //получаем данные в виде массива ['event_id' => 1, 'account_id' => 1]
         $order_data = $request->validated();
@@ -91,16 +92,16 @@ class ConferencesController extends Controller
 
     /**
      * Display the specified resource.
-     * @param  CreateRequest                  $request
-     * @param  RegistrationOrdersQueryBuilder $ordersQueryBuilder
-     * @param  ConferencesQueryBuilder        $conferencesQueryBuilder
-     * @return string
+     * @param CreateRequest                  $request
+     * @param RegistrationOrdersQueryBuilder $ordersQueryBuilder
+     * @param ConferencesQueryBuilder        $conferencesQueryBuilder
+     * @return JsonResponse
      */
     public function unregister(
         CreateRequest $request,
         RegistrationOrdersQueryBuilder $ordersQueryBuilder,
         ConferencesQueryBuilder $conferencesQueryBuilder
-    ): string
+    ): JsonResponse
     {
         $order_data = $request->validated();
 

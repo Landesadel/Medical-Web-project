@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Conferences extends Model
 {
@@ -12,7 +13,7 @@ class Conferences extends Model
     protected $table = 'conferences';
 
     protected $fillable = [
-        'title',
+        'name',
         'description',
         'short_text',
         'image',
@@ -20,13 +21,20 @@ class Conferences extends Model
         'date_start',
         'date_end',
         'is_active',
+        'program',
         'all_places',
-        'alredy_exist',
-        'program'
     ];
 
     protected $hidden = [
         'created_at',
         'updated_at'
     ];
+
+    /**
+     * @return HasMany
+     */
+    public function event(): HasMany
+    {
+        return $this->hasMany(RegistrationOrders::class, 'event_id');
+    }
 }

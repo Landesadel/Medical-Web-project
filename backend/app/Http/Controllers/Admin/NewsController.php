@@ -44,7 +44,7 @@ class NewsController extends Controller
         if($news){
             return redirect()->route('admin.news.index')->with('success', 'News added');
         }
-        return \back()->with('error', 'News can be added');
+        return \back()->with('error', 'News can not be added');
     }
 
     /**
