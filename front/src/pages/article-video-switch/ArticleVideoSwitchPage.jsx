@@ -44,7 +44,7 @@ const ArticleVideoSwitchPage = () => {
 					className={cn({ [styles.selected]: !isSwitch })}
 					onClick={() => setIsSwitch(false)}
 				>
-					Сатьи
+					Статьи
 				</button>
 			</div>
 			<div className={styles.container}>

@@ -9,6 +9,7 @@ import { useForum } from '../../hooks/useForum';
 import { useAuth } from '../../hooks/useAuth';
 import MaterialIcon from '../../ui/MaterialIcon';
 import ReactQuill from 'react-quill';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 
 const PageSize = 5;
 
@@ -59,7 +60,8 @@ function ForumTopic() {
 		<h2 className={styles.title}>Loading</h2>
 	) : (
 		posts[postId]?.comments && (
-			<>
+				<>
+				<Breadcrumbs activePage={posts[postId].title} />
 				<h2 className={styles.title}>
 					{isEdit ? (
 						<input

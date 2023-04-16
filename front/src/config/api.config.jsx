@@ -12,7 +12,7 @@ export const getCentersCategoriesUrl = () => `api/community/centers/categories`;
 export const getNewsUrl = (string) => `api/content/news${string}`;
 export const getRecentViewedUrl = (string) => `api/profile/viewed${string}`;
 export const getFavoritesUrl = (string) => `api/profile/favorites${string}`;
-export const getCommentsUrl = (string) => `api/forum/comments${string}`;
+export const getCommentsUrl = (string) => `api/forum${string}/comments`;
 export const getPostsUrl = (string) => `api/forum/posts${string}`;
 export const getRecommendationsUrl = (string) =>
 	`api/profile/recommended${string}`;
