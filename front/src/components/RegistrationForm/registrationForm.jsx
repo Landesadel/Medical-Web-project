@@ -4,7 +4,9 @@ import { useActions } from '../../hooks/useActions';
 import { InputField } from '../basic/InputField/InputField';
 import { TextAreaField } from '../basic/TextAreaField/TextAreaField';
 import Select from 'react-select';
+import { useNavigate } from 'react-router-dom';
 import { Controller, useForm } from 'react-hook-form';
+import { useAuth } from '../../hooks/useAuth';
 export const optionList = [
 	{
 		value: 'Организация и менеджмент симуляционного центра',
@@ -83,15 +85,14 @@ function RegistrationForm() {
 	const { register, handleSubmit, formState, reset, control } = useForm({
 		mode: 'all',
 	});
+	const navigate = useNavigate();
 	const { register: registerAction } = useActions();
 	const [responseError, setResponseError] = useState(null);
-	const [selectedOptions, setSelectedOptions] = useState(null);
 	const [checked, setChecked] = useState(false);
-	console.log(formState);
-
+	const { user, error } = useAuth();
 	const onSubmit = async (data) => {
 		await getCsrfToken();
-		console.log(data);
+
 		const {
 			// password_confirmation,
 			email,
@@ -119,36 +120,32 @@ function RegistrationForm() {
 			has_agreed,
 		} = data;
 
-		try {
-			registerAction({
-				// password_confirmation: hashedPassword(password_confirmation),
-				email,
-				// password: hashedPassword(password),
-				address,
-				sign_for_news,
-				position,
-				phone,
-				surname,
-				// other_info,
-				last_name,
-				first_name,
-				experience,
-				education,
-				education_end,
-				company,
-				// category,
-				birth_date,
-				specialization,
-				degree,
-				academic_rank,
-				interests,
-				is_other_organization,
-				is_member,
-				has_agreed,
-			});
-		} catch (error) {
-			setResponseError(error.response.data.errors);
-		}
+		registerAction({
+			// password_confirmation: hashedPassword(password_confirmation),
+			email,
+			// password: hashedPassword(password),
+			address,
+			sign_for_news,
+			position,
+			phone,
+			surname,
+			// other_info,
+			last_name,
+			first_name,
+			experience,
+			education,
+			education_end,
+			company,
+			// category,
+			birth_date,
+			specialization,
+			degree,
+			academic_rank,
+			interests,
+			is_other_organization,
+			is_member,
+			has_agreed,
+		});
 		// reset();
 	};
 
@@ -381,7 +378,7 @@ function RegistrationForm() {
 									placeholder="..."
 									isSearchable
 									styles={
-										!formState.errors.interests || selectedOptions.length > 0
+										!formState.errors.interests
 											? customStyles
 											: customStylesError
 									}
@@ -391,7 +388,7 @@ function RegistrationForm() {
 						);
 					}}
 				/>
-				{formState.errors.interests && selectedOptions.length < 1 && (
+				{formState.errors.interests && (
 					<span
 						className={`input_field_text_error mt-negative-15`}
 						data-testid="input-error"

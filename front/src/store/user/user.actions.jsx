@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toastr } from 'react-redux-toastr';
-
 import { AuthService } from '../../services/auth/auth.service';
 import { FavoritesService } from '../../services/favorites.service';
 import { ProfileService } from '../../services/profile.service';
@@ -64,7 +63,10 @@ export const register = createAsyncThunk(
 				is_member,
 				has_agreed
 			);
-			toastr.success('Registration', 'Completed successfully');
+			toastr.success(
+				'Registration',
+				'Ваша заявка на регистрацию принята успешно.'
+			);
 			return response.data;
 		} catch (error) {
 			toastrError(error);
@@ -205,8 +207,6 @@ export const update = createAsyncThunk(
 		thunkApi
 	) => {
 		try {
-			console.log(interests);
-			console.log(sign_for_news);
 			const response = await AuthService.update(
 				// password_confirmation,
 				email,
@@ -234,7 +234,6 @@ export const update = createAsyncThunk(
 			toastr.success('User update', 'Completed successfully');
 			return response.data;
 		} catch (error) {
-			console.log(error);
 			toastrError(error);
 			return thunkApi.rejectWithValue(error);
 		}

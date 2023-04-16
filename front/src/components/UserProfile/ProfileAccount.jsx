@@ -11,7 +11,7 @@ import styles from './UserProfile.module.scss';
 import { optionList } from '../RegistrationForm/registrationForm';
 const ProfileAccount = () => {
 	const { user, notifications } = useAuth();
-	console.log(user);
+
 	const { register, handleSubmit, formState, reset, control } = useForm({
 		defaultValues: {
 			first_name: user.first_name,
@@ -47,7 +47,7 @@ const ProfileAccount = () => {
 	};
 	const onSubmit = async (data) => {
 		await getCsrfToken();
-		console.log(data);
+
 		await update(data);
 		setIsDisabled(!isDisabled);
 	};

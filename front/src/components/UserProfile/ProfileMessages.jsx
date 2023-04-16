@@ -14,7 +14,6 @@ const ProfileMessages = () => {
 				setNotifications({ id: user.id });
 		};
 	}, []);
-	console.log(notifications);
 	return (
 		<div className={styles.notifications}>
 			{Object.keys(notifications).length > 0 &&

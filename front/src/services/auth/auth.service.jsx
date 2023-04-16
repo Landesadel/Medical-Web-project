@@ -65,7 +65,6 @@ export const AuthService = {
 			is_member,
 			has_agreed,
 		});
-		console.log(response);
 		if (response?.data.accessToken) {
 			saveToStorage(response.data);
 		}
@@ -79,7 +78,6 @@ export const AuthService = {
 		});
 
 		if (response?.data.accessToken) {
-			console.log(response.data);
 			saveToStorage(response?.data);
 		}
 		return response;
@@ -128,7 +126,6 @@ export const AuthService = {
 		interests,
 		is_other_organization
 	) {
-		console.log(interests);
 		sign_for_news = sign_for_news ? true : false;
 		const interestsList = interests.map((item) => item.value).join(', ');
 		const response = await axiosClassic.post(getAuthUrl('/user/update'), {
@@ -155,14 +152,12 @@ export const AuthService = {
 			interests: interestsList,
 			is_other_organization,
 		});
-		console.log(response);
 		if (response?.data.accessToken) {
 			saveToStorage(response.data);
 		}
 		return response;
 	},
 	async resetPassword({ email, password, password_confirmation, token }) {
-		console.log(email);
 		const response = await axiosClassic.post(getAuthUrl('/reset-password'), {
 			email,
 			password,

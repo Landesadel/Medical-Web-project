@@ -13,7 +13,6 @@ const Profile = () => {
 	const [chidrenComponent, setChildrenComponent] = useState(<ProfileAccount />);
 	const [selectedComponent, setSelectedComponent] = useState(1);
 	const handleOnclick = (id = 0) => {
-		console.log(id);
 		switch (id) {
 			case 1:
 				setChildrenComponent(<ProfileAccount />);

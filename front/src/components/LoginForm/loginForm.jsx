@@ -19,14 +19,14 @@ function LoginForm() {
 
 	const onSubmit = async (data) => {
 		setResponseError(null);
-		await getCsrfToken().then((res) => console.log(res.headers));
+		const result = await getCsrfToken();
+		console.log(result);
 		const { email, password } = data;
 		try {
 			loginAction({ email, password: hashedPassword(password) });
 		} catch (error) {
 			setResponseError(error.response.data.errors);
 		}
-		reset();
 	};
 
 	return (

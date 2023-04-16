@@ -14,6 +14,7 @@ import {
 } from './user.actions';
 
 const initialState = {
+	error: null,
 	isLoading: false,
 	user: getStoreLocalStorage('user'),
 	favorites: {},
@@ -28,14 +29,16 @@ export const userSlice = createSlice({
 		builder
 			.addCase(register.pending, (state) => {
 				state.isLoading = true;
+				state.error = null;
 			})
 			.addCase(register.fulfilled, (state, { payload }) => {
 				state.isLoading = false;
 				state.user = payload.user;
+				state.error = null;
 			})
-			.addCase(register.rejected, (state) => {
+			.addCase(register.rejected, (state, { payload }) => {
 				state.isLoading = false;
-				state.user = null;
+				state.error = { ...payload };
 			})
 			.addCase(login.pending, (state) => {
 				state.isLoading = true;

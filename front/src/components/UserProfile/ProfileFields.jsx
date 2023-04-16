@@ -214,12 +214,6 @@ const ProfileFields = ({ isDisabled, formState, register, user, control }) => {
 					control={control}
 					rules={{ required: true }}
 					render={({ field: { onChange, onBlur, value, name, ref } }) => {
-						console.log(
-							optionList.filter((item) =>
-								user.interests.split(', ').includes(item.value)
-							)
-						);
-						console.log(value);
 						return (
 							<label>
 								{'Область профессиональных интересов'}
