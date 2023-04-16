@@ -28,8 +28,8 @@ const data = [
 ];
 
 const Sources = () => {
-	// const { user } = useAuth();
-	const user=true;
+	const { user } = useAuth();
+
 	return (
 		<div className={styles.sources} id="sources">
 			<div className="container">

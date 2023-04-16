@@ -1,0 +1,528 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header render header 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <header
+        class="header"
+        id="header"
+      >
+        <nav
+          class="navbar navbar-expand-lg h-100 navbar-custom"
+        >
+          <div
+            class="container p-lg-0"
+          >
+            <a
+              class="navbar-brand logo"
+              href="/"
+            >
+              <img
+                alt="Bosom"
+                src=""
+              />
+            </a>
+            <button
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              class="navbar-toggler"
+              data-bs-target="#navbarSupportedContent"
+              data-bs-toggle="collapse"
+              type="button"
+            >
+              <span
+                class="navbar-toggler-icon"
+              />
+            </button>
+            <div
+              class="collapse navbar-collapse d-lg-flex justify-content-lg-between"
+              id="navbarSupportedContent"
+            >
+              <ul
+                class="navbar-nav me-auto ms-lg-2 mb-2 mb-lg-0 w-100 justify-content-center"
+              >
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-current="page"
+                    class="menu_link"
+                    href="/"
+                  >
+                    Главная
+                  </a>
+                </li>
+                <li
+                  class="nav-item dropdown"
+                >
+                  <div
+                    aria-expanded="false"
+                    class="menu_link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    role="button"
+                  >
+                    Общество
+                  </div>
+                  <ul
+                    class="dropdown-menu dropdown-menu-right"
+                  >
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/statute"
+                      >
+                        Устав
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/structure"
+                      >
+                        Структура
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/normatives"
+                      >
+                        Нормативные документы
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/partners"
+                      >
+                        Компании-партнеры
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/register"
+                      >
+                        Вступить в общество
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/payments"
+                      >
+                        Оплатить взносы
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/photos"
+                      >
+                        Фотогалерея
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="nav-item dropdown"
+                >
+                  <div
+                    aria-expanded="false"
+                    class="menu_link dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    role="button"
+                  >
+                    Обучение
+                  </div>
+                  <ul
+                    class="dropdown-menu dropdown-menu-right"
+                  >
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/centers"
+                      >
+                        Симуляционные центры
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="/study"
+                      >
+                        Учебные материалы
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-current="page"
+                    class="menu_link"
+                    href="/conferencies"
+                  >
+                    Конференции
+                  </a>
+                </li>
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-current="page"
+                    class="menu_link"
+                    href="/forum"
+                  >
+                    Форум
+                  </a>
+                </li>
+                <li
+                  class="nav-item"
+                >
+                  <a
+                    aria-current="page"
+                    class="menu_link"
+                    href="/contacts"
+                  >
+                    Контакты
+                  </a>
+                </li>
+              </ul>
+              <div
+                class="nav-item ms-auto headerAccountIcon"
+              >
+                <a
+                  aria-current="page"
+                  class="nav-link"
+                  href="/login"
+                >
+                  <svg
+                    height="32px"
+                    version="1.1"
+                    viewBox="0 0 1024 1024"
+                    width="32px"
+                  >
+                    <path
+                      d="M170.666667 512a42.666667 42.666667 0 0 0 42.666666 42.666667h323.84l-98.133333 97.706666a42.666667 42.666667 0 0 0 0 60.586667 42.666667 42.666667 0 0 0 60.586667 0l170.666666-170.666667a42.666667 42.666667 0 0 0 8.96-14.08 42.666667 42.666667 0 0 0 0-32.426666 42.666667 42.666667 0 0 0-8.96-14.08l-170.666666-170.666667a42.666667 42.666667 0 1 0-60.586667 60.586667l98.133333 97.706666H213.333333a42.666667 42.666667 0 0 0-42.666666 42.666667zM725.333333 85.333333H298.666667a128 128 0 0 0-128 128v128a42.666667 42.666667 0 0 0 85.333333 0V213.333333a42.666667 42.666667 0 0 1 42.666667-42.666666h426.666666a42.666667 42.666667 0 0 1 42.666667 42.666666v597.333334a42.666667 42.666667 0 0 1-42.666667 42.666666H298.666667a42.666667 42.666667 0 0 1-42.666667-42.666666v-128a42.666667 42.666667 0 0 0-85.333333 0v128a128 128 0 0 0 128 128h426.666666a128 128 0 0 0 128-128V213.333333a128 128 0 0 0-128-128z"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <form
+            class="d-none"
+            role="search"
+          >
+            <input
+              aria-label="Search"
+              class="me-2 headerSearchInput"
+              placeholder="Поиск"
+              type="search"
+            />
+            <button
+              class="btn headerSearchBtn"
+              type="submit"
+            >
+              <img
+                alt="search"
+                src=""
+              />
+            </button>
+          </form>
+        </nav>
+      </header>
+    </div>
+  </body>,
+  "container": <div>
+    <header
+      class="header"
+      id="header"
+    >
+      <nav
+        class="navbar navbar-expand-lg h-100 navbar-custom"
+      >
+        <div
+          class="container p-lg-0"
+        >
+          <a
+            class="navbar-brand logo"
+            href="/"
+          >
+            <img
+              alt="Bosom"
+              src=""
+            />
+          </a>
+          <button
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            class="navbar-toggler"
+            data-bs-target="#navbarSupportedContent"
+            data-bs-toggle="collapse"
+            type="button"
+          >
+            <span
+              class="navbar-toggler-icon"
+            />
+          </button>
+          <div
+            class="collapse navbar-collapse d-lg-flex justify-content-lg-between"
+            id="navbarSupportedContent"
+          >
+            <ul
+              class="navbar-nav me-auto ms-lg-2 mb-2 mb-lg-0 w-100 justify-content-center"
+            >
+              <li
+                class="nav-item"
+              >
+                <a
+                  aria-current="page"
+                  class="menu_link"
+                  href="/"
+                >
+                  Главная
+                </a>
+              </li>
+              <li
+                class="nav-item dropdown"
+              >
+                <div
+                  aria-expanded="false"
+                  class="menu_link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  role="button"
+                >
+                  Общество
+                </div>
+                <ul
+                  class="dropdown-menu dropdown-menu-right"
+                >
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/statute"
+                    >
+                      Устав
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/structure"
+                    >
+                      Структура
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/normatives"
+                    >
+                      Нормативные документы
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/partners"
+                    >
+                      Компании-партнеры
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/register"
+                    >
+                      Вступить в общество
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/payments"
+                    >
+                      Оплатить взносы
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/photos"
+                    >
+                      Фотогалерея
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li
+                class="nav-item dropdown"
+              >
+                <div
+                  aria-expanded="false"
+                  class="menu_link dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  role="button"
+                >
+                  Обучение
+                </div>
+                <ul
+                  class="dropdown-menu dropdown-menu-right"
+                >
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/centers"
+                    >
+                      Симуляционные центры
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="/study"
+                    >
+                      Учебные материалы
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li
+                class="nav-item"
+              >
+                <a
+                  aria-current="page"
+                  class="menu_link"
+                  href="/conferencies"
+                >
+                  Конференции
+                </a>
+              </li>
+              <li
+                class="nav-item"
+              >
+                <a
+                  aria-current="page"
+                  class="menu_link"
+                  href="/forum"
+                >
+                  Форум
+                </a>
+              </li>
+              <li
+                class="nav-item"
+              >
+                <a
+                  aria-current="page"
+                  class="menu_link"
+                  href="/contacts"
+                >
+                  Контакты
+                </a>
+              </li>
+            </ul>
+            <div
+              class="nav-item ms-auto headerAccountIcon"
+            >
+              <a
+                aria-current="page"
+                class="nav-link"
+                href="/login"
+              >
+                <svg
+                  height="32px"
+                  version="1.1"
+                  viewBox="0 0 1024 1024"
+                  width="32px"
+                >
+                  <path
+                    d="M170.666667 512a42.666667 42.666667 0 0 0 42.666666 42.666667h323.84l-98.133333 97.706666a42.666667 42.666667 0 0 0 0 60.586667 42.666667 42.666667 0 0 0 60.586667 0l170.666666-170.666667a42.666667 42.666667 0 0 0 8.96-14.08 42.666667 42.666667 0 0 0 0-32.426666 42.666667 42.666667 0 0 0-8.96-14.08l-170.666666-170.666667a42.666667 42.666667 0 1 0-60.586667 60.586667l98.133333 97.706666H213.333333a42.666667 42.666667 0 0 0-42.666666 42.666667zM725.333333 85.333333H298.666667a128 128 0 0 0-128 128v128a42.666667 42.666667 0 0 0 85.333333 0V213.333333a42.666667 42.666667 0 0 1 42.666667-42.666666h426.666666a42.666667 42.666667 0 0 1 42.666667 42.666666v597.333334a42.666667 42.666667 0 0 1-42.666667 42.666666H298.666667a42.666667 42.666667 0 0 1-42.666667-42.666666v-128a42.666667 42.666667 0 0 0-85.333333 0v128a128 128 0 0 0 128 128h426.666666a128 128 0 0 0 128-128V213.333333a128 128 0 0 0-128-128z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <form
+          class="d-none"
+          role="search"
+        >
+          <input
+            aria-label="Search"
+            class="me-2 headerSearchInput"
+            placeholder="Поиск"
+            type="search"
+          />
+          <button
+            class="btn headerSearchBtn"
+            type="submit"
+          >
+            <img
+              alt="search"
+              src=""
+            />
+          </button>
+        </form>
+      </nav>
+    </header>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

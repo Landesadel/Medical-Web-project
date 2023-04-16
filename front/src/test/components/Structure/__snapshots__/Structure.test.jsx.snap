@@ -1,0 +1,298 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Structure snapshot structure 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="container"
+      >
+        <h1
+          class="heading"
+        >
+          Структура общества
+        </h1>
+        <div
+          class="tree"
+        >
+          <ul>
+            <li>
+              <div
+                class="structureBtn"
+              >
+                <h4>
+                  Председатель
+                </h4>
+                <p
+                  class="name"
+                >
+                    
+                </p>
+              </div>
+            </li>
+            <li>
+              <div
+                class="structureBtn"
+              >
+                <h4>
+                  Заместитель председателя
+                </h4>
+                <p
+                  class="name"
+                >
+                    
+                </p>
+              </div>
+            </li>
+            <li>
+              <div
+                class="structureBtn"
+              >
+                <h4>
+                  Правление
+                </h4>
+                <div
+                  class="branchWrapper"
+                >
+                  <div
+                    class="branch structureBtn"
+                  >
+                    <h4>
+                      Секретарь правления
+                    </h4>
+                    <div>
+                      <p>
+                          
+                      </p>
+                    </div>
+                  </div>
+                  <div
+                    class="branch structureBtn"
+                  >
+                    <h4>
+                      Члены правления
+                    </h4>
+                    <div>
+                      <p>
+                          
+                      </p>
+                      <p>
+                          
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="structureBtn"
+              >
+                <h4>
+                  Ревизионная комиссия
+                </h4>
+                <div
+                  class="branchWrapper"
+                >
+                  <div
+                    class="branch structureBtn"
+                  >
+                    <h4>
+                      Члены ревизионной комиссии
+                    </h4>
+                    <div>
+                      <p>
+                          
+                      </p>
+                      <p>
+                          
+                      </p>
+                      <p>
+                          
+                      </p>
+                      <p>
+                          
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="container"
+    >
+      <h1
+        class="heading"
+      >
+        Структура общества
+      </h1>
+      <div
+        class="tree"
+      >
+        <ul>
+          <li>
+            <div
+              class="structureBtn"
+            >
+              <h4>
+                Председатель
+              </h4>
+              <p
+                class="name"
+              >
+                  
+              </p>
+            </div>
+          </li>
+          <li>
+            <div
+              class="structureBtn"
+            >
+              <h4>
+                Заместитель председателя
+              </h4>
+              <p
+                class="name"
+              >
+                  
+              </p>
+            </div>
+          </li>
+          <li>
+            <div
+              class="structureBtn"
+            >
+              <h4>
+                Правление
+              </h4>
+              <div
+                class="branchWrapper"
+              >
+                <div
+                  class="branch structureBtn"
+                >
+                  <h4>
+                    Секретарь правления
+                  </h4>
+                  <div>
+                    <p>
+                        
+                    </p>
+                  </div>
+                </div>
+                <div
+                  class="branch structureBtn"
+                >
+                  <h4>
+                    Члены правления
+                  </h4>
+                  <div>
+                    <p>
+                        
+                    </p>
+                    <p>
+                        
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div
+              class="structureBtn"
+            >
+              <h4>
+                Ревизионная комиссия
+              </h4>
+              <div
+                class="branchWrapper"
+              >
+                <div
+                  class="branch structureBtn"
+                >
+                  <h4>
+                    Члены ревизионной комиссии
+                  </h4>
+                  <div>
+                    <p>
+                        
+                    </p>
+                    <p>
+                        
+                    </p>
+                    <p>
+                        
+                    </p>
+                    <p>
+                        
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
