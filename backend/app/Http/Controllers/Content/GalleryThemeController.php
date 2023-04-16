@@ -29,9 +29,9 @@ class GalleryThemeController extends Controller
 
     /**
      * Display the specified resource.
-     * @param int $id
+     * @param int                      $id
      * @param GalleryThemeQueryBuilder $galleryThemeQueryBuilder
-     * @param GalleryQueryBuilder $galleryQueryBuilder
+     * @param GalleryQueryBuilder      $galleryQueryBuilder
      * @return JsonResponse
      */
     public function show(int $id, GalleryThemeQueryBuilder $galleryThemeQueryBuilder, GalleryQueryBuilder $galleryQueryBuilder): JsonResponse

@@ -9,7 +9,7 @@
             </div>
         </div>
     </div>
-    <h2>Some section</h2>
+    <h2>Welcome!</h2>
     <div class="table-responsive">
 
     </div>

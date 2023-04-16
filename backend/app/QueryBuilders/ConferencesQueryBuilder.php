@@ -3,6 +3,7 @@
 namespace App\QueryBuilders;
 
 use App\Models\Conferences;
+use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Carbon\Carbon;
@@ -33,6 +34,15 @@ class ConferencesQueryBuilder extends QueryBuilder
             'future' => $this->getFutureConferences(),
             'past' => $this->getPastConferences(),
         ];
+    }
+
+    /**
+     * @param int $quantity
+     * @return LengthAwarePaginator
+     */
+    public function getConferencesWithPagination(int $quantity = 20): LengthAwarePaginator
+    {
+        return $this->model->paginate($quantity);
     }
 
     /**

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Content;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use App\QueryBuilders\CategoriesQueryBuilder;
 use App\QueryBuilders\CommunityCenterQueryBuilder;
@@ -12,13 +13,9 @@ class CommunityCenterController extends Controller
 {
     /**
      * @param CommunityCenterQueryBuilder $communityCenterQueryBuilder
-     * @param CategoriesQueryBuilder $categoriesQueryBuilder
-     * @return string
+     * @return JsonResponse
      */
-    public function index(
-        CommunityCenterQueryBuilder $communityCenterQueryBuilder,
-        CategoriesQueryBuilder $categoriesQueryBuilder
-    ): string
+    public function index(CommunityCenterQueryBuilder $communityCenterQueryBuilder): JsonResponse
     {
         $community_center_collection = $communityCenterQueryBuilder->getCollection();
 
@@ -31,14 +28,14 @@ class CommunityCenterController extends Controller
     }
 
     /**
-     * @param CategoriesQueryBuilder $categoriesQueryBuilder
+     * @param CategoriesQueryBuilder      $categoriesQueryBuilder
      * @param CommunityCenterQueryBuilder $communityCenterQueryBuilder
-     * @return string
+     * @return JsonResponse
      */
     public function getCategories(
         CategoriesQueryBuilder $categoriesQueryBuilder,
         CommunityCenterQueryBuilder $communityCenterQueryBuilder
-    ): string
+    ): JsonResponse
     {
         $categories_collection = $categoriesQueryBuilder->getCollection();
         $community_center_collection = $communityCenterQueryBuilder->getCollection();
@@ -56,8 +53,8 @@ class CommunityCenterController extends Controller
     }
 
     /**
-     * @param int $id
-     * @param CommunityCenterQueryBuilder $communityCenterQueryBuilder
+     * @param int                               $id
+     * @param CommunityCenterQueryBuilder       $communityCenterQueryBuilder
      * @param CommunityCenterPhotosQueryBuilder $communityCenterPhotosQueryBuilder
      * @return string
      */
