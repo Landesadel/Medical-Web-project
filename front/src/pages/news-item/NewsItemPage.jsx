@@ -15,11 +15,13 @@ const NewsItemPage = () => {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		FavoritesService.checkFavorite({
-			type: 3,
-			user_id: user.id,
-			type_id: newsId,
-		});
+		if (user) {
+			FavoritesService.checkFavorite({
+				type: 3,
+				user_id: user.id,
+				type_id: newsId,
+			});
+		}
 		try {
 			NewsService.getById(newsId).then((res) => setNewsItem(res));
 		} catch (error) {

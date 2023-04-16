@@ -433,34 +433,17 @@ function RegistrationForm() {
 					<span className="reg_checkbox_text">
 						Являетесь ли членом других общественных объединений
 					</span>
-                    <input
-                        id="is_member"
-                        name="is_member"
-                        type="checkbox"
-                        aria-label="is_member"
-                        onClick={() => setChecked(prev=>!checked)}
-                        {...register('is_member')}
-                    />
-                </label>
+					<input
+						id="is_member"
+						name="is_member"
+						type="checkbox"
+						aria-label="is_member"
+						onClick={() => setChecked((prev) => !checked)}
+						{...register('is_member')}
+					/>
+				</label>
 
-                {checked&&
-                 <InputField
-                     className="reg_field_width"
-                     id="is_other_organization"
-                     name="is_other_organization"
-                     aria-label="is_other_organization"
-                     labelText="Название обшественного объединения"
-                     defaultValue=""
-                     error={errors['is_other_organization']}
-                     placeholder="..."
-                     custom_required={true}
-                     {...register('is_other_organization', {
-                         required: {value: true, message: 'Необходимо заполнить поле'},
-                     })}
-                 />}
-
-
-                <label>
+				<label>
 					<span className="reg_checkbox_text">
 						Хотите ли Вы получать наши новости себе на почту?
 					</span>

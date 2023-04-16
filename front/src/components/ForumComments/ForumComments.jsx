@@ -79,7 +79,7 @@ function ForumComments({ comments, url: URL, topicId }) {
 						<div className={styles.comment__content}>
 							<img
 								className={styles.comments__avatar}
-								src={comment.avatar}
+								src={'imagesTest/avatar.jpg'}
 								alt="avatar"
 							/>
 							<div className={styles.comment__all_text}>

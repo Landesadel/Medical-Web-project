@@ -13,7 +13,7 @@ class CommunityCenterPhotosSeeder extends Seeder
     public function run(): void
     {
         $data = [];
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 10; $i < 19; $i++) {
             $data[] = [
                 'community_center_id' => $i + 1,
                 'image_url' => \fake()->imageUrl(360, 360, 'animals'),

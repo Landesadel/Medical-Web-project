@@ -51,7 +51,7 @@ class ConferencesQueryBuilder extends QueryBuilder
     function getFutureConferences(): Collection
     {
         return $this->model
-            ->whereDate('date_start', '>', Carbon::now())
+            ->where('date_start', '>', Carbon::now())
             ->latest('date_start')
             ->get();
     }
@@ -62,7 +62,7 @@ class ConferencesQueryBuilder extends QueryBuilder
     function getPastConferences(): Collection
     {
         return $this->model
-            ->whereDate('date_end', '<', Carbon::now())
+            ->where('date_end', '<', Carbon::now())
             ->get();
     }
 
