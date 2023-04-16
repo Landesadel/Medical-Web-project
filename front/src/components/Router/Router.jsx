@@ -33,6 +33,8 @@ import Contacts from '../../pages/contacts/Contacts';
 import Payments from '../../pages/payments/Payments';
 import Structure from "../../pages/structure/Structure";
 import Partners from "../../pages/Partners/Partners";
+import History from '../../pages/history/History';
+
 
 
 const isAuth = true;
@@ -133,6 +135,10 @@ function Router() {
 					<Route
 						path={routes.CONTACTS.link}
 						element={<Contacts />}
+					/>
+					<Route
+						path={routes.HISTORY.link}
+						element={<History />}
 					/>
 					<Route
 						path="*"
