@@ -54,7 +54,7 @@ const Header = ({ isAuth }) => {
 						<ul className="navbar-nav me-auto ms-lg-2 mb-2 mb-lg-0 w-100 justify-content-center">
 							<li className="nav-item">
 								<Link
-									to="/"
+									to={routes.HOME.link}
 									className="menu_link"
 									aria-current="page"
 									onClick={hideMenu}
@@ -73,7 +73,7 @@ const Header = ({ isAuth }) => {
 								</div>
 								<ul className="dropdown-menu dropdown-menu-right">
 									<li>
-										<Link to="/statute" className="dropdown-item" onClick={hideMenu}>
+										<Link to={routes.STATUTE.link} className="dropdown-item" onClick={hideMenu}>
 											Устав
 										</Link>
 									</li>
@@ -83,7 +83,7 @@ const Header = ({ isAuth }) => {
 										</Link>
 									</li>
 									<li>
-										<Link to="/normatives" className="dropdown-item" onClick={hideMenu}>
+										<Link to={routes.NORMATIVES.link} className="dropdown-item" onClick={hideMenu}>
 											Нормативные документы
 										</Link>
 									</li>
@@ -107,7 +107,7 @@ const Header = ({ isAuth }) => {
 										</Link>
 									</li>
 									<li>
-										<Link to="/photos" className="dropdown-item" onClick={hideMenu}>
+										<Link to={routes.PHOTOS.link} className="dropdown-item" onClick={hideMenu}>
 											Фотогалерея
 										</Link>
 									</li>
@@ -124,7 +124,7 @@ const Header = ({ isAuth }) => {
 								</div>
 								<ul className="dropdown-menu dropdown-menu-right">
 									<li>
-										<Link to="/centers" className="dropdown-item" onClick={hideMenu}>
+										<Link to={routes.CENTERS.link} className="dropdown-item" onClick={hideMenu}>
 											Симуляционные центры
 										</Link>
 									</li>
