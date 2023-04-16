@@ -17,20 +17,19 @@ const data = [
 		image: element2,
 		title: 'Литература',
 		description: 'Методические пособия, книги, презентации',
-		link: 'Подробнее...',
-		url: routes.ARTICLES.link,
+		link: routes.ARTICLES.link,
 	},
 	{
 		image: element3,
 		title: 'Видеоматериалы',
 		description: 'Обучающие видеоролики, конференции, лекции',
-		link: 'Подробнее...',
-		url: routes.VIDEOS.link,
+		link: routes.VIDEOS.link,
 	},
 ];
 
 const Sources = () => {
-	const { user } = useAuth();
+	// const { user } = useAuth();
+	const user=true;
 	return (
 		<div className={styles.sources} id="sources">
 			<div className="container">
@@ -50,7 +49,7 @@ const Sources = () => {
 										<p className={styles.sourcesText}>
 											{item.description}
 										</p>
-										<NavLink to={user?item.url:routes.LOGIN.link} className={styles.link}>Подробнее...</NavLink>
+										<NavLink to={user?item.link:routes.LOGIN.link} className={styles.link}>Подробнее...</NavLink>
 									</div>
 								)
 							})}

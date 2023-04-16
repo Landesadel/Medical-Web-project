@@ -3,6 +3,7 @@ import {useParams} from "react-router-dom";
 import {NormativesService} from "../../services/normatives.service";
 import Loader from "../../components/Loader/Loader";
 import PdfViewer from "../../components/PdfViewer/PdfViewer";
+import {normatives} from "../normatives/Normatives";
 
 
 const NormativeItem = () => {
@@ -13,7 +14,9 @@ const NormativeItem = () => {
 
     useEffect(() => {
         try {
-            NormativesService.getById(id).then((res) => setNormativeItem(res));
+            // NormativesService.getById(id).then((res) => setNormativeItem(res));
+            const doc=normatives?.find((item)=>String(item.id)===id);
+            setNormativeItem(doc);
         } catch (error) {
             setError(error.message);
         }
