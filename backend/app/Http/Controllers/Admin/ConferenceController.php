@@ -10,6 +10,7 @@ use App\QueryBuilders\ConferencesQueryBuilder;
 use Exception;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Log;
 class ConferenceController extends Controller
 {
@@ -19,6 +20,8 @@ class ConferenceController extends Controller
      */
     public function index(ConferencesQueryBuilder $queryBuilder): View
     {
+        $conferences = $queryBuilder->get();
+
         return \view('admin.conferences.index', [
             'conferences' => $queryBuilder->getConferencesWithPagination(),
         ]);

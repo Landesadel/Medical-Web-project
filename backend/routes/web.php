@@ -39,7 +39,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], static function () {
         ->name('accept_the_application');
     Route::get('reject_the_application/{application}', [ApplicationForRegistrationController::class, 'rejectTheApplication'])
         ->name('reject_the_application');
-
 });
 
 require __DIR__.'/auth.php';
