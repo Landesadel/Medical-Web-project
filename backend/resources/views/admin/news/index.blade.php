@@ -41,7 +41,7 @@
                     <td>{{ $news->created_at }}</td>
                     <td>{{ $news->updated_at }}</td>
                     <td>
-                        <a class="btn btn-sm btn-outline-secondary" href="{{ url("https://bosomed.ru/middleware/admin/news/".$news->id ."/edit") }}">измениить</a>
+                        <a class="btn btn-sm btn-outline-secondary" href="{{ url(App\Classes\Helpers::getHost(true) . "/admin/news/".$news->id ."/edit") }}">измениить</a>
                         <a href="javascript:;" class="delete btn btn-sm btn-outline-secondary" rel="{{ $news->id }}">удалить</a>
                     </td>
                 </tr>

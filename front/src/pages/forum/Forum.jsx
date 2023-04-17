@@ -6,6 +6,7 @@ import { useForum } from '../../hooks/useForum';
 import styles from './Forum.module.scss';
 import Pagination from '../../ui/pagination/Pagination';
 import { useAuth } from '../../hooks/useAuth';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 
 const PageSize = 9;
 
@@ -33,6 +34,7 @@ function Forum() {
 
 	return (
 		<>
+			<Breadcrumbs activePage="Форум" />
 			<h2 className={styles.title}>Форум</h2>
 			<div className={styles.container}>
 				{isLoading ? (
