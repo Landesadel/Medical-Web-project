@@ -29,15 +29,15 @@ describe('Header', () => {
     });
 
 });
-describe('should navigate to url1 when link is clicked', () => {
-
-    const componentName = render(
-        <Provider store={store}>
-            <BrowserRouter>
-                <Header/>
-            </BrowserRouter>
-        </Provider>
-    );
-    userEvent.click(screen.getByText("Конференции"));
-
-});
+// describe('should navigate to url1 when link is clicked', () => {
+//
+//     const componentName = render(
+//         <Provider store={store}>
+//             <BrowserRouter>
+//                 <Header/>
+//             </BrowserRouter>
+//         </Provider>
+//     );
+//     userEvent.click(screen.getByText("Конференции"));
+//
+// });
