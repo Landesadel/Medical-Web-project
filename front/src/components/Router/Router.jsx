@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-
 import styles from './Router.module.scss';
 import Header from '../Header/Header';
 import Home from '../../pages/home/Home';
@@ -12,16 +11,33 @@ import Login from '../../pages/login/Login';
 import Profile from '../../pages/profile/Profile';
 import VideoGallery from '../../pages/video-gallery/VideoGallery';
 import VideoItemPage from '../../pages/video-item/VideoItemPage';
-import NewsItemPage from '../../pages/news-item/NewsItemPage';
 import NewsGallery from '../../pages/news-gallery/NewsGallery';
-
+import NewsItemPage from '../../pages/news-item/NewsItemPage';
 import Forum from '../../pages/forum/Forum';
 import ForumTopic from '../../pages/forum-topic/ForumTopic';
-
 import { useAuth } from '../../hooks/useAuth';
 import ArticleVideoSwitchPage from '../../pages/article-video-switch/ArticleVideoSwitchPage';
 import ArticlesGallery from '../../pages/articles-gallery/ArticlesGallery';
 import ArticleItemPage from '../../pages/article-item/ArticleItemPage';
+import ConferenceItemPage from '../../pages/conference-item/ConferenceItemPage';
+import ConferenceGallery from '../../pages/conference-gallery/ConferenceGallery';
+import PhotoGallery from '../../pages/photo-gallery/PhotoGallery';
+import EventPhotos from '../../pages/event-photos/EventPhotos';
+import Statute from "../../pages/statute/Statute";
+import Normatives from "../../pages/normatives/Normatives";
+import NormativeItem from "../../pages/normative-item/NormativeItem";
+import CentersGallery from "../../pages/centers-gallery/CentersGallery";
+import CenterItemPage from "../../pages/center-item-page/CenterItemPage";
+
+import Payments from '../../pages/payments/Payments';
+import Contacts from "../../pages/contacts/Contacts";
+
+import Structure from "../../pages/structure/Structure";
+import Partners from "../../pages/Partners/Partners";
+import History from '../../pages/history/History';
+
+
+const isAuth = true;
 
 function Router() {
 	const { user } = useAuth();
@@ -29,7 +45,7 @@ function Router() {
 	return (
 		<>
 			<Header isAuth={!!user} />
-			<div style={{ minHeight: '100vh' }}>
+			<div className={styles.router}>
 				<Routes>
 					<Route exec path={routes.HOME.link} element={<Home />} />
 					<Route
@@ -53,8 +69,22 @@ function Router() {
 					<Route path="/videos/:videoId" element={<VideoItemPage />} />
 					<Route exact path="/news" element={<NewsGallery />} />
 					<Route path="/news/:newsId" element={<NewsItemPage />} />
+					<Route exact path="/conferencies" element={<ConferenceGallery />} />
+					<Route
+						path="/conferencies/:conferenceId"
+						element={<ConferenceItemPage />}
+					/>
 					<Route exact path="/articles" element={<ArticlesGallery />} />
 					<Route path="/articles/:articleId" element={<ArticleItemPage />} />
+					<Route path="/statute" element={<Statute />} />
+					<Route path="/normatives" element={<Normatives />} />
+					<Route path="/normatives/:id" element={<NormativeItem />} />
+					<Route path="/centers" element={<CentersGallery/>} />
+					<Route path="/centers/:centerId" element={<CenterItemPage/>} />
+					<Route path="/payments" element={<Payments />} />
+					<Route path={routes.STRUCTURE.link} element={<Structure/>} />
+					<Route path={routes.PARTNERS.link} element={<Partners/>} />
+
 
 					<Route
 						path={routes.FORUM.link}
@@ -89,6 +119,24 @@ function Router() {
 								<Profile />
 							</PrivateRoute>
 						}
+					/>
+
+					<Route
+						path={routes.PHOTOS.link}
+						element={
+							// <PrivateRoute isAuth={!!user}>
+							<PhotoGallery />
+							// </PrivateRoute>
+						}
+					/>
+					<Route path={`${routes.PHOTOS.link}/:id`} element={<EventPhotos />} />
+					<Route
+						path={routes.CONTACTS.link}
+						element={<Contacts />}
+					/>
+					<Route
+						path={routes.HISTORY.link}
+						element={<History />}
 					/>
 					<Route
 						path="*"

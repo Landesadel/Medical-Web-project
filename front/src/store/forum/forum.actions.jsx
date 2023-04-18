@@ -1,6 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toastr } from 'react-redux-toastr';
-
 import { ForumService } from '../../services/forum.service';
 import { toastrError } from '../../utils/toast-error';
 
@@ -23,8 +22,10 @@ export const getPostByIdWithComments = createAsyncThunk(
 	async ({ postId }, thunkApi) => {
 		try {
 			const response = await ForumService.getPostByIdWithComments(postId);
+
 			toastr.success('Comments', 'Recieved successfully');
-			return response;
+			console.log({ id: Number(postId), comments: response });
+			return { id: Number(postId), comments: response };
 		} catch (error) {
 			toastrError(error);
 			return thunkApi.rejectWithValue(error);

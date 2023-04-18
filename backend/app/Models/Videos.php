@@ -1,5 +1,5 @@
 <?php
- 
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -8,8 +8,44 @@ use Laravel\Scout\Searchable;
 
 class Videos extends Model
 {
-    use HasFactory, Searchable;
+    use HasFactory;
+//    use Searchable;
 
     protected $table = 'videos';
 
+    protected $fillable = [
+        'video_youtube_id',
+        'author',
+        'title',
+        'description',
+        'image_url',
+        'text_html',
+    ];
+
+    /**
+     * Отдаём все видео
+     *
+     * @return mixed
+     */
+    public static function getAll(): mixed
+    {
+        return \DB::table('videos')->select([
+            'id',
+            'video_youtube_id',
+            'author',
+            'title',
+            'description',
+            'image_url',
+            'text_html',
+        ])->get();
+    }
+
+    /**
+     * @param int $id
+     * @return mixed
+     */
+    public static function getVideoById(int $id): mixed
+    {
+        return \DB::table('videos')->find($id);
+    }
 }

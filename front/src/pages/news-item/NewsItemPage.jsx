@@ -1,20 +1,34 @@
 import { useParams } from 'react-router-dom';
-import Favorites from '../../components/Favorites/Favorites';
 import { useQuery } from 'react-query';
 import { NewsService } from '../../services/news.service';
 import styles from './NewsItemPage.module.scss';
 import React, { useEffect, useState } from 'react';
-import NewsItem from '../../components/NewsList/NewsItem';
+import Loader from '../../components/Loader/Loader';
+import { FavoritesService } from '../../services/favorites.service';
+import { useAuth } from '../../hooks/useAuth';
 
 const NewsItemPage = () => {
+	const { user } = useAuth();
 	const { newsId } = useParams();
 
-	const { isLoading, data } = useQuery('News list', () => NewsService.getAll());
+	const [newsItem, setNewsItem] = useState(null);
+	const [error, setError] = useState(null);
 
-	const newsItem = data.find((news) => String(news?.id) === newsId);
-	console.log(newsItem);
-	return isLoading ? (
-		<h1>Loading...</h1>
+	useEffect(() => {
+		FavoritesService.checkFavorite({
+			type: 3,
+			user_id: user.id,
+			type_id: newsId,
+		});
+		try {
+			NewsService.getById(newsId).then((res) => setNewsItem(res));
+		} catch (error) {
+			setError(error.message);
+		}
+	}, []);
+
+	return !newsItem ? (
+		<h1>{error}</h1>
 	) : (
 		<div className={styles.singleNews}>
 			<div className="container">
@@ -26,20 +40,16 @@ const NewsItemPage = () => {
 							className={styles.cardImage}
 						/>
 						<div className={styles.cardContent}>
-							<time dateTime="2021-03-30" className={styles.cardDate}>
+							<time dateTime={newsItem?.created_at} className={styles.cardDate}>
 								{newsItem?.created_at}
 							</time>
 							<span className={styles.cardTitle}>{newsItem?.title}</span>
 						</div>
 					</div>
-					<div
-						className={styles.cardDescription}
-						dangerouslySetInnerHTML={{ __html: newsItem?.bigText }}
-					/>
+					<p className={styles.cardDescription}>{newsItem?.description}</p>
 				</div>
 			</div>
 		</div>
 	);
 };
-
 export default NewsItemPage;

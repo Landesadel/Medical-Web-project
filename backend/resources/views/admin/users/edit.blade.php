@@ -4,7 +4,7 @@
         <h1 class="h2">Редактирование пользователя</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group mr-2">
-                <a href="{{ route('admin.users.index') }}" class="btn btn-sm btn-outline-secondary">Назад</a>
+                <a href="{{ url(App\Classes\Helpers::getHost(true) . "/admin/users") }}" class="btn btn-sm btn-outline-secondary">Назад</a>
                 <button class="btn btn-sm btn-outline-secondary">#</button>
             </div>
         </div>
@@ -15,8 +15,8 @@
                 <x-alert type="danger" :message="$error"></x-alert>
             @endforeach
         @endif
-        <form method="post" action="{{ route('admin.users.update', ['user' => $user]) }}">
-{{--            @csrf--}}
+        <form method="post" action="{{  url(App\Classes\Helpers::getHost(true) . "/admin/users/" . $user->id) }}">
+            @csrf
             @method('put')
             <div class="form-group">
                 <label for="access_group">Группа доступа</label>
@@ -75,7 +75,7 @@
                 <label for="sign_for_news">Подписка на новости</label>
                 <input type="radio" id="sign_for_news" name="sign_for_news" value="true" @if ($user->sign_for_news === true) checked @endif>
             </div>
-            <button type="submit" class="btn btn-sm btn-outline-secondary">Добавить+</button>
+            <button type="submit" class="btn btn-sm btn-outline-secondary">Сохранить+</button>
         </form>
     </div>
 @endsection

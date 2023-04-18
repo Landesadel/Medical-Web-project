@@ -4,7 +4,8 @@
         <h1 class="h2">Список пользователей</h1>
         <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group mr-2">
-                <a href="{{ route('admin.users.create') }}" class="btn btn-sm btn-outline-secondary">Добавить пользователя</a>
+                <a href="{{ url(App\Classes\Helpers::getHost(true) . "/admin/users/create") }}"
+                   class="btn btn-sm btn-outline-secondary">Добавить пользователя</a>
                 <button class="btn btn-sm btn-outline-secondary">#</button>
             </div>
         </div>
@@ -32,7 +33,7 @@
         </tr>
         </thead>
         <tbody>
-            @forelse ($usersList as $user)
+        @forelse ($usersList as $user)
             <tr>
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->accessGroups }}</td>
@@ -47,19 +48,19 @@
                 <td>{{ $user->place_work }}</td>
                 <td>{{ $user->position }}</td>
                 <td>{{ $user->experience }}</td>
-                <td>{{ $user->sign_for_news }}</td>
+                <td>{{ ($user->sign_for_news !== false) ? 'нет' : 'да' }}</td>
                 <td>{{ $user->created_at }}</td>
                 <td>{{ $user->updated_at }}</td>
                 <td>
-                    <a href="{{ route('admin.users.edit', ['user' => $user]) }}">измениить</a>
-                    <a href="javascript:;" class="delete" rel="{{ $user->id }}">удалить</a>
+                    <a class="btn btn-sm btn-outline-secondary" href="{{ url(App\Classes\Helpers::getHost(true) . "/admin/users/" . $user->id . "/edit")}}">изменить</a>
+                    <a href="javascript:;" class="delete btn btn-sm btn-outline-secondary" rel="{{ $user->id }}">удалить</a>
                 </td>
             </tr>
-            @empty
-                <tr>
-                    <td colspan="7">Нет записей</td>
-                </tr>
-            @endforelse
+        @empty
+            <tr>
+                <td colspan="7">Нет записей</td>
+            </tr>
+        @endforelse
         </tbody>
     </table>
     {{ $usersList->links() }}

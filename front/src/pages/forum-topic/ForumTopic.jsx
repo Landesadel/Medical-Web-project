@@ -9,6 +9,7 @@ import { useForum } from '../../hooks/useForum';
 import { useAuth } from '../../hooks/useAuth';
 import MaterialIcon from '../../ui/MaterialIcon';
 import ReactQuill from 'react-quill';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 
 const PageSize = 5;
 
@@ -16,6 +17,7 @@ function ForumTopic() {
 	const [isVisible, setIsVisible] = useState(false);
 	const { getPostByIdWithComments, editPost } = useActions();
 	const { postId } = useParams();
+	console.log(postId);
 	const { posts, isLoading } = useForum();
 	const { user } = useAuth();
 	const [isEdit, setIsEdit] = useState(false);
@@ -31,7 +33,7 @@ function ForumTopic() {
 		const firstPageIndex = (currentPage - 1) * PageSize;
 		const lastPageIndex = firstPageIndex + PageSize;
 		return (
-			posts[postId].comments &&
+			posts[postId]?.comments &&
 			Object.fromEntries(
 				Object.entries(posts[postId].comments).slice(
 					firstPageIndex,
@@ -39,7 +41,7 @@ function ForumTopic() {
 				)
 			)
 		);
-	}, [currentPage, posts[postId].comments]);
+	}, [currentPage, posts[postId]?.comments]);
 
 	const handleEdit = () => {
 		editPost({
@@ -58,7 +60,8 @@ function ForumTopic() {
 		<h2 className={styles.title}>Loading</h2>
 	) : (
 		posts[postId]?.comments && (
-			<>
+				<>
+				<Breadcrumbs activePage={posts[postId].title} />
 				<h2 className={styles.title}>
 					{isEdit ? (
 						<input

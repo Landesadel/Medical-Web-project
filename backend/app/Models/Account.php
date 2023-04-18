@@ -4,15 +4,19 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
-use Laravel\Scout\Searchable;
 
 class Account extends Authenticatable
 {
-    use HasFactory, Searchable, HasApiTokens, Notifiable;
+    use HasFactory, HasApiTokens, Notifiable;
+
+    protected $table = 'accounts';
 
     /**
      * The attributes that are mass assignable.
@@ -43,9 +47,19 @@ class Account extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function userOne():HasOne
+    /**
+     * @return HasOne
+     */
+    public function user():HasOne
     {
-        return $this->hasOne(User::class,'account_id');
+        return $this->hasOne(User::class,'account_id', 'id');
     }
 
+    /**
+     * @return hasMany
+     */
+    public function conferenceRegistration(): hasMany
+    {
+        return $this->hasMany(RegistrationOrders::class, 'account_id','id');
+    }
 }

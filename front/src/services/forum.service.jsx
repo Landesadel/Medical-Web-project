@@ -13,7 +13,7 @@ export const ForumService = {
 		});
 	},
 	async getPostByIdWithComments(postId) {
-		return axiosClassic.get(getPostsUrl(`/${postId}`)).then((res) => {
+		return axiosClassic.get(getCommentsUrl(`/${postId}`)).then((res) => {
 			return res.data;
 		});
 	},

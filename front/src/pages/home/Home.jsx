@@ -1,18 +1,18 @@
 import React from 'react';
 import TopSection from "../../components/TopSection/TopSection";
-import Courses from "../../components/Courses/Courses";
 import News from "../../components/News/News";
 import Sources from "../../components/Sources/Sources";
-
-
+import ConfAndSeminars from "../../components/ConfAndSeminars/ConfAndSeminars";
+import CentersSliderList from "../../components/CentersSliderList/CentersSliderList";
 
 
 const Home = () => {
     return (
         <div>
-           <TopSection/>
+            <TopSection/>
             <News/>
-            <Courses/>
+            <CentersSliderList/>
+            <ConfAndSeminars/>
             <Sources/>
         </div>
     );
