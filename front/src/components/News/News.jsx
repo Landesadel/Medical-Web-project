@@ -24,7 +24,7 @@ const News = () => {
 
 
     return (
-        <div className={styles.news} id="news">
+        <div className={styles.news} id="news" data-testid="news">
             <div className="container">
                 <div className="row">
                     <div className="col">

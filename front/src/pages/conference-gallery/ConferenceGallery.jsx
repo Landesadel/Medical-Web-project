@@ -52,11 +52,10 @@ const ConferenceGallery = () => {
     }, [currentPage2, oldConferencies]);
 
 
-    return isLoading ? (
-    	<h1>Loading...</h1>
-    ) : (
-     <div className="container">
-        <h1 className={styles.heading}>{'Конференции'}</h1>
+    return  <div className="container" data-testid="conferencies-gallery">
+        { isLoading ? <h1>Loading...</h1> :<div>
+
+        <h1 className={styles.heading} data-testid="conferencies">{'Конференции'}</h1>
         <section>
             <ConferenceBanner conference={banner}/>
         </section>
@@ -88,9 +87,9 @@ const ConferenceGallery = () => {
             </div>
 
         </section>
-
+        </div>
+            }
     </div>
-    );
 };
 
 export default ConferenceGallery;

@@ -3,15 +3,16 @@ import Partners from "../../../pages/Partners/Partners";
 import {render, screen} from '@testing-library/react';
 import '@testing-library/jest-dom';
 import {BrowserRouter, Routes} from 'react-router-dom';
+import {MemoryRouter} from "react-router-dom";
 
 
 
 describe('Partners', () => {
     it('render partners', () => {
         render(
-            <BrowserRouter>
+            <MemoryRouter>
                 <Partners/>
-            </BrowserRouter>
+            </MemoryRouter>
         );
 
         expect(screen.getByRole('list')).toBeInTheDocument();
@@ -20,9 +21,9 @@ describe('Partners', () => {
 
     it('snapshot partners', () => {
         const snapshot=render(
-            <BrowserRouter>
+            <MemoryRouter>
                 <Partners/>
-            </BrowserRouter>
+            </MemoryRouter>
         );
         expect(snapshot).toMatchSnapshot();
 

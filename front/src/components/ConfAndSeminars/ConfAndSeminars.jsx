@@ -20,7 +20,7 @@ const ConfAndSeminars = () => {
 
 
     return (
-        <div className={styles.news} id="news">
+        <div className={styles.news} id="news" data-testid="conf-and-seminars">
             <div className="container">
                 <div className="row">
                     <div className="col">
