@@ -1,10 +1,10 @@
 import React from 'react';
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import Virtumed from '../../assets/images/partners/Virtumed.png';
 import Eidos from '../../assets/images/partners/Eidos.png';
 import Impresa from '../../assets/images/partners/Impresa.png';
 import styles from "./Partners.module.scss";
-import Instagram from "../../assets/images/instagram.png";
+
 
 const partners=[
     {
@@ -25,7 +25,6 @@ const partners=[
 ];
 
 const Partners = () => {
-    const navigate = useNavigate();
     return (
         <div className="container">
             <h1 className={styles.heading}>{'Компании-партнеры'}</h1>
@@ -34,7 +33,9 @@ const Partners = () => {
                     {partners?.map((item,idx)=>(
                         <li key={idx}>
                             <div className={styles.partnerWrapper}>
-                                <div className={styles.previewWrapper}><img src={item?.preview} alt={item?.alt}/></div>
+                                <div className={styles.previewWrapper}>
+                                    <img src={item?.preview} alt={item?.alt}/>
+                                </div>
                                 <Link
                                     to={item?.link}
                                     rel="nofollow noopener noreferrer"

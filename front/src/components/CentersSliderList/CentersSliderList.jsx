@@ -53,7 +53,7 @@ const CentersSliderList = () => {
         }
     }, []);
     return (
-        <div className={styles.courses} id="courses">
+        <div className={styles.courses} id="courses" data-testid="centers-slider">
             <div className="container">
                 <div className="row">
                     <div className="col">

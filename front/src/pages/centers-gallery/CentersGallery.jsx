@@ -71,12 +71,9 @@ const CentersGallery = () => {
         setFilteredCenters([...filteredCenters]);
     };
 
-    return centers.length < 1 ? (
-            <Loader/>
-        ) :
-      (
-            <div className="container">
-                <h1 className={styles.heading}>{'Симуляционные центры'}</h1>
+    return <div className="container" data-testid="centers-gallery">
+        {centers.length < 1 ? <Loader data-testid="loader"/> :<div>
+                <h1 className={styles.heading} >{'Симуляционные центры'}</h1>
                 <ButtonGroup>
                     {categories.map(category => (
                         <Tab
@@ -94,8 +91,9 @@ const CentersGallery = () => {
                 <div className={styles.centerWrapper}>
                     <CenterList centers={filteredCenters.length>0?filteredCenters:centers}/>
                 </div>
+        </div>
+            }
             </div>
-        );
 };
 
 export default CentersGallery;

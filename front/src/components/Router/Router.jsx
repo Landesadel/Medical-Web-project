@@ -28,10 +28,8 @@ import Normatives from "../../pages/normatives/Normatives";
 import NormativeItem from "../../pages/normative-item/NormativeItem";
 import CentersGallery from "../../pages/centers-gallery/CentersGallery";
 import CenterItemPage from "../../pages/center-item-page/CenterItemPage";
-
 import Payments from '../../pages/payments/Payments';
 import Contacts from "../../pages/contacts/Contacts";
-
 import Structure from "../../pages/structure/Structure";
 import Partners from "../../pages/Partners/Partners";
 import History from '../../pages/history/History';
