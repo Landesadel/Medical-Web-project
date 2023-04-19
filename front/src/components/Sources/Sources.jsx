@@ -28,10 +28,10 @@ const data = [
 ];
 
 const Sources = () => {
-	// const { user } = useAuth();
-	const user=true;
+	const { user } = useAuth();
+
 	return (
-		<div className={styles.sources} id="sources">
+		<div className={styles.sources} id="sources" data-testid="sources">
 			<div className="container">
 				<div className="row">
 					<div className="col">

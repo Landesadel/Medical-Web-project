@@ -388,7 +388,7 @@
  					labelText="Пароль"[m
  					error={errors.password}[m
  					{...register('password', {[m
-[1mdiff --git a/front/src/components/Router/Router.jsx b/front/src/components/Router/Router.jsx[m
+[1mdiff --git a/front/src/components/Router/Router.test.jsx b/front/src/components/Router/Router.jsx[m
 [1mindex bf70fc6..66be27e 100644[m
 [1m--- a/front/src/components/Router/Router.jsx[m
 [1m+++ b/front/src/components/Router/Router.jsx[m
@@ -624,11 +624,14 @@
  	async ({ postId }, thunkApi) => {[m
  		try {[m
  			const response = await ForumService.getPostByIdWithComments(postId);[m
-[32m+[m[41m[m
+[32m+[m[41m
+[m
  			toastr.success('Comments', 'Recieved successfully');[m
 [31m-			return response;[m
-[32m+[m			[32mconsole.log({ id: Number(postId), comments: response });[m[41m[m
-[32m+[m			[32mreturn { id: Number(postId), comments: response };[m[41m[m
+[32m+[m			[32mconsole.log({ id: Number(postId), comments: response });[m[41m
+[m
+[32m+[m			[32mreturn { id: Number(postId), comments: response };[m[41m
+[m
  		} catch (error) {[m
  			toastrError(error);[m
  			return thunkApi.rejectWithValue(error);[m

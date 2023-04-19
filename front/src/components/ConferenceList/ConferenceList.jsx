@@ -5,7 +5,7 @@ import ConferenceItem from "./ConferenceItem";
 const ConferenceList = ({ conferencies }) => {
     console.log(conferencies);
     return (
-        <div className={styles.conferenceList}>
+        <div className={styles.conferenceList} data-testid="conf-list">
             {conferencies.map((item, index) => (
                 <ConferenceItem key={index} conference={item} />
             ))}

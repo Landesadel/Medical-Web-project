@@ -14,7 +14,7 @@ const images = [robotoFoto, sonoFoto, laparoFoto, colonoFoto];
 const TopSection = () => {
     const navigate = useNavigate();
     return (
-        <div className={styles.topSection} id="topSection">
+        <div className={styles.topSection} id="topSection" data-testid="top-section">
             <div className="container">
                 <div className="row d-flex align-items-center">
                     <div className="col-sm">
